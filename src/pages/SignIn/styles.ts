@@ -1,4 +1,5 @@
-import { RFValue } from "react-native-responsive-fontsize"
+import { MaterialCommunityIcons } from "@expo/vector-icons"
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize"
 import styled from "styled-components/native"
 
 
@@ -6,9 +7,22 @@ export const Container = styled.View`
 
         flex:1;
         width:100%;
+        justify-content:center;
         padding: 0px ${RFValue(24)}px;
+        max-width:100%;
 
 `
+export const HalfContainer = styled.View`
+
+        height: ${RFValue(450)}px;
+        background-color: #fff;
+        width: ${RFPercentage(51)}px;
+        position:absolute;
+        bottom: 0;
+        right:0;
+        border-radius: ${RFValue(20)}px;
+`
+
 
 export const ButtonContainer = styled.View`
 
@@ -22,3 +36,26 @@ export const ButtonContainer = styled.View`
 export const Title = styled.Text`
         font-size: ${RFValue(20)}px;
 `
+
+export const TitleFlashcard = styled.Text`
+        font-size: ${RFValue(30)}px;
+        text-align:center;
+        color:#397AF9;
+        font-weight:300;
+`
+
+export const Star = styled(MaterialCommunityIcons).attrs({
+        name:"star",
+        color:"#397AF9"
+})``
+
+
+export const StarContainer = styled.View`
+        display:flex;
+        flex-direction:row;
+        width:100%;
+        align-items:center;
+        justify-content:center;
+        margin-bottom: ${RFValue(60)}px;
+`
+

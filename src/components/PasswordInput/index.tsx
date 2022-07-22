@@ -23,6 +23,9 @@ export function PasswordInput(props: MyProps){
     return (
         <Component.Container>
                 <I
+                underlineColor="#397AF9"
+                activeUnderlineColor="#397AF9"
+                style={{backgroundColor: "#fff"}}
                 secureTextEntry={!isVisible}
                 placeholder={props.placeholder}
                 focusable={props.focusable}

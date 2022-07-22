@@ -10,6 +10,9 @@ export function TextInput(props: MyProps){
     return (
      
         <I
+        underlineColor="#397AF9"
+        activeUnderlineColor="#397AF9"
+        style={{backgroundColor: "#fff"}}
         placeholder={props.placeholder}
         focusable={props.focusable}
         value={props.value}

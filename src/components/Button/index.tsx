@@ -24,6 +24,7 @@ export function Button({title, onPress, icon, secondary = false, ...rest}:IButto
     return (
             <B 
             {...rest}
+            color="#397AF9"
             icon={icon || ""}
             mode={getButtonMode()}  
             onPress={onPress}

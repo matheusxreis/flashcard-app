@@ -1,3 +1,4 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
 import { Text } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
@@ -15,9 +16,17 @@ export function SignIn(){
 
     return (
         <SignInStyle.Container>
+        <SignInStyle.HalfContainer/>
 
-            <SignInStyle.Title> Bem-vindo! </SignInStyle.Title>
+        <SignInStyle.StarContainer>
+            <SignInStyle.Star size={30}/>
+            <SignInStyle.Star size={45}/>
+            <SignInStyle.Star size={30}/>
+        </SignInStyle.StarContainer> 
 
+
+
+        <SignInStyle.Title> Bem-vindo! </SignInStyle.Title>
         <Text> Username: </Text>
         <TextInput
         placeholder="Type your username:"
