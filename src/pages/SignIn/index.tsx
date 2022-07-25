@@ -21,7 +21,7 @@ export function SignIn(){
 
      
       <SignInStyle.Form>
-        <SignInStyle.Title> Bem-vindo! </SignInStyle.Title>
+        <SignInStyle.Title> Faça o login! </SignInStyle.Title>
         <SignInStyle.Label> Username: </SignInStyle.Label>
         <TextInput
         placeholder="Type your username:"

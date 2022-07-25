@@ -1,5 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { useTheme } from "styled-components";
+import { Home } from "../../pages/Home";
 import { SignIn } from "../../pages/SignIn";
 
 
@@ -19,6 +20,15 @@ export function HomeStackRoutes(){
                 backgroundColor: theme.colors.backgroundSecondary
             }
         }}>
+
+        <Stack.Screen 
+            options={{
+               
+                title: "Início"
+            }}
+            name="Home" 
+            component={Home}/>
+            
             <Stack.Screen 
             options={{
                
