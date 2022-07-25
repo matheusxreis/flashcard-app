@@ -16,15 +16,10 @@ export function Home(){
         <Component.Container>
 
            
-            <Component.Greetings> Seja bem-vindo! {'\n '}
-            Esse é o FlashCardApp. </Component.Greetings>
+            <Component.Greetings> FlashCardApp </Component.Greetings>
             <Component.Description> Aplicativo de FlashCards, 100% brasileiro. </Component.Description>
        
-            <Component.WhatAreContainer>
-            <Component.WhatAre> 
-                O que são FlashCards? 
-            </Component.WhatAre>
-            </Component.WhatAreContainer>
+            
 
         <Component.HalfContainer
         landscape={useDimesion().landscape}>

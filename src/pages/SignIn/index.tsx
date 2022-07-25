@@ -23,13 +23,13 @@ export function SignIn(){
       landscape={useDimesion().landscape}>
         <SignInStyle.Form>
         <SignInStyle.Title> Faça o login! </SignInStyle.Title>
-        <SignInStyle.Label> Username: </SignInStyle.Label>
+        <SignInStyle.Label> Usuário: </SignInStyle.Label>
         <TextInput
         placeholder="Type your username:"
         focusable={false}
       />
 
-        <SignInStyle.Label> Password: </SignInStyle.Label>
+        <SignInStyle.Label> Senha: </SignInStyle.Label>
 
         <PasswordInput
         placeholder="Type your password:"

@@ -12,7 +12,7 @@ interface IScrollView {
 export const Container = styled.ScrollView.attrs({
     contentContainerStyle:{
         flex:1,
-        alignItems:"flex-start",
+        alignItems:"center",
     },
 })`
 //padding: 0px ${RFValue(10)}px
@@ -40,10 +40,11 @@ export const HalfContainer = styled.ScrollView.attrs<IScrollView>({
 
 export const Greetings = styled.Text`
     
-    font-size: ${RFValue(16)}px;
-    color: ${({theme})=>theme.colors.textPrimary};
-    font-family:${({theme})=>theme.fonts.medium};
+    font-size: ${RFValue(40)}px;
+    color: ${({theme})=>theme.colors.textSecondary};
+    font-family:${({theme})=>theme.fonts.title};
     margin-top: ${RFValue(20)}px;
+    text-align:center;
 
 `
 
@@ -51,7 +52,7 @@ export const Description = styled.Text`
     
     font-size: ${RFValue(14)}px;
     color: ${({theme})=>theme.colors.textPrimary};
-    font-family:${({theme})=>theme.fonts.light};
+    font-family:${({theme})=>theme.fonts.thin};
 
 `
 

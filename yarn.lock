@@ -1093,10 +1093,20 @@
   resolved "https://registry.npmjs.org/@emotion/unitless/-/unitless-0.7.5.tgz"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@expo-google-fonts/kaushan-script@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/kaushan-script/-/kaushan-script-0.2.2.tgz#40cff516f98fb94fed3a824b443cc6e5b1e7879d"
+  integrity sha512-jRsY6akIhA282N5rtGL7p2HGqwV/JuyVpSE9WrZMdmH+LM/beEImv5WEIMRu6J8OGz4yxlK5Olg07WwTmJpZJg==
+
 "@expo-google-fonts/roboto@^0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@expo-google-fonts/roboto/-/roboto-0.2.2.tgz#0a9f4685e8d02bdb0d2d2919c102f531bdb353d4"
   integrity sha512-qP0oZsR8rTID5T9wEXSt9yCYMnKYKlvIlrJGGpd+t71Obt2J51+51PBpvxd5c8fpABEru3zx6ENmpU9lzwr8zw==
+
+"@expo-google-fonts/satisfy@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/satisfy/-/satisfy-0.2.2.tgz#8917224854b9fe3d2520a4910203646ee46a0366"
+  integrity sha512-oa4VkgR3LTkamMiu5vTCqhxANLOM8pq3K79DhqfiLFOHp46dgo1jC6ZfaqA8QTv1nTcuYFEh0A4lFwItwBrnWA==
 
 "@expo/bunyan@4.0.0", "@expo/bunyan@^4.0.0":
   version "4.0.0"

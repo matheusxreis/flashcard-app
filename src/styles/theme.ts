@@ -12,6 +12,7 @@ export const theme = {
         thin:"Roboto_100Thin",
         light:"Roboto_300Light",
         medium:"Roboto_500Medium",
-        bold:"Roboto_700Bold"
+        bold:"Roboto_700Bold",
+        title: "KaushanScript_400Regular"
     }
 }

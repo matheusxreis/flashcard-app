@@ -14,6 +14,14 @@ Roboto_100Thin,
 Roboto_300Light,
 Roboto_500Medium,
 Roboto_700Bold } from '@expo-google-fonts/roboto';
+
+import {
+  Satisfy_400Regular
+} from "@expo-google-fonts/satisfy";
+
+import {
+KaushanScript_400Regular
+} from "@expo-google-fonts/kaushan-script"
 import { ThemeProvider } from 'styled-components';
 import { theme } from './src/styles/theme';
 import { BottomAuthRoutes } from './src/routes/authRoutes/auth.bottom';
@@ -26,7 +34,8 @@ export default function App() {
     Roboto_100Thin,
     Roboto_300Light,
     Roboto_500Medium,
-    Roboto_700Bold
+    Roboto_700Bold,
+    KaushanScript_400Regular
   });
 
   if(!fontsLoaded){
