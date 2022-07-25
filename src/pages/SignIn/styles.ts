@@ -15,7 +15,7 @@ export const Container = styled.View`
 export const HalfContainer = styled.View`
 
         height: ${RFValue(450)}px;
-        background-color: #fff;
+        background-color: ${({theme})=>theme.colors.backgroundSecondary};
         width: ${RFPercentage(51)}px;
         position:absolute;
         bottom: 0;
@@ -35,13 +35,31 @@ export const ButtonContainer = styled.View`
 
 export const Title = styled.Text`
         font-size: ${RFValue(20)}px;
+        font-family: ${({theme})=>theme.fonts.medium};
+        color: ${({theme})=>theme.colors.primaryText};
 `
 
 export const TitleFlashcard = styled.Text`
         font-size: ${RFValue(30)}px;
         text-align:center;
-        color:#397AF9;
+       // color:#397AF9;
         font-weight:300;
+`
+
+export const Label = styled.Text`
+
+
+        font-size: ${RFValue(15)}px;
+        padding-top: ${RFValue(10)}px;
+        font-family: ${({theme})=>theme.fonts.light};
+        color: ${({theme})=>theme.colors.primaryText};
+
+`
+
+export const Form = styled.View`
+padding-top:${RFValue(123)}px;
+flex:1;
+justify-content:center;
 `
 
 export const Star = styled(MaterialCommunityIcons).attrs({

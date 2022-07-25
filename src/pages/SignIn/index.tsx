@@ -10,6 +10,7 @@ import * as SignInStyle from "./styles";
 
 
 
+
 export function SignIn(){
 
 
@@ -18,22 +19,16 @@ export function SignIn(){
         <SignInStyle.Container>
         <SignInStyle.HalfContainer/>
 
-        <SignInStyle.StarContainer>
-            <SignInStyle.Star size={30}/>
-            <SignInStyle.Star size={45}/>
-            <SignInStyle.Star size={30}/>
-        </SignInStyle.StarContainer> 
-
-
-
+     
+      <SignInStyle.Form>
         <SignInStyle.Title> Bem-vindo! </SignInStyle.Title>
-        <Text> Username: </Text>
+        <SignInStyle.Label> Username: </SignInStyle.Label>
         <TextInput
         placeholder="Type your username:"
         focusable={false}
       />
 
-        <Text> Password: </Text>
+        <SignInStyle.Label> Password: </SignInStyle.Label>
 
         <PasswordInput
         placeholder="Type your password:"
@@ -52,6 +47,7 @@ export function SignIn(){
             title="SIGN IN" 
             onPress={()=>{}}/>
         </SignInStyle.ButtonContainer>
+        </SignInStyle.Form>
 
         </SignInStyle.Container>
     )
