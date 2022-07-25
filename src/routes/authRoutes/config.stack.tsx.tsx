@@ -1,5 +1,6 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { useTheme } from "styled-components";
+import { Preferences } from "../../pages/Preferences";
 import { SignIn } from "../../pages/SignIn";
 
 
@@ -21,7 +22,7 @@ export function ConfigStackRoutes(){
                 title: "Configurações"
             }}
             name="Config" 
-            component={SignIn}/>
+            component={Preferences}/>
         </Stack.Navigator>
     )
 
