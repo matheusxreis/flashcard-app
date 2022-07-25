@@ -34,9 +34,7 @@ export const HalfContainer = styled.ScrollView.attrs<IScrollView>({
         position:absolute;
         bottom: 0;
         right:0;
-        borderTopLeftRadius: ${RFValue(20)}px;
-        borderTopRightRadius: ${RFValue(20)}px;
-
+      
 `
 
 

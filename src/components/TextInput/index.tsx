@@ -1,5 +1,7 @@
+import { Roboto_500Medium } from "@expo-google-fonts/roboto";
 import { Text, TextInputProps } from "react-native";
 import { TextInput as I } from "react-native-paper";
+import { RFPercentage } from "react-native-responsive-fontsize";
 import { useTheme } from "styled-components";
 
 interface MyProps extends TextInputProps {};
@@ -14,7 +16,9 @@ export function TextInput(props: MyProps){
         <I
         underlineColor={theme.colors.primary}
         activeUnderlineColor={theme.colors.primary}
-        style={{backgroundColor: theme.colors.backgroundSecondary,
+        style={{
+                
+                backgroundColor: theme.colors.backgroundSecondary,
                 color: theme.colors.textPrimary}}
         placeholder={props.placeholder}
         focusable={props.focusable}

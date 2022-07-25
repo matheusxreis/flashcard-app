@@ -2,27 +2,36 @@ import { MaterialCommunityIcons } from "@expo/vector-icons"
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize"
 import styled from "styled-components/native"
 
+interface IScrollView {
+        landscape: boolean;
+}
 
-export const Container = styled.View`
 
-        flex:1;
-        background:${({theme})=>theme.colors.backgroundPrimary};
-        width:100%;
-        justify-content:center;
-        padding: 0px ${RFValue(24)}px;
-        max-width:100%;
+export const Container = styled.ScrollView.attrs({
+        contentContainerStyle:{
+            flex:1,
+            alignItems:"flex-start",
+        },
+    })`
+    //padding: 0px ${RFValue(10)}px
+      
+        
+    `
+export const HalfContainer = styled.ScrollView.attrs({
+        contentContainerStyle: {
+                alignItems:"center"
+        }
+})
+        <IScrollView>`
 
-`
-export const HalfContainer = styled.View`
-
-        height: ${RFValue(450)}px;
+        height: ${({landscape})=> landscape ? RFValue(230) :RFValue(350)}px;
         background-color: ${({theme})=>theme.colors.backgroundSecondary};
-        width: ${RFPercentage(51)}px;
+        width: ${RFValue(350)}px;
         position:absolute;
-        bottom: 0;
-        right:0;
-        borderTopLeftRadius: ${RFValue(20)}px;
-        borderTopRightRadius: ${RFValue(20)}px;
+        bottom:0;
+       
+
+       
 
 `
 
@@ -31,8 +40,10 @@ export const ButtonContainer = styled.View`
 
         display:flex;
         flex-direction:row;
-        justify-content: space-between;
+        justify-content: space-around;
         margin-top: ${RFValue(20)}px;
+        align-items:flex-end;
+        width: ${RFValue(300)}px;
 
 `
 
@@ -60,10 +71,10 @@ export const Label = styled.Text`
 `
 
 export const Form = styled.View`
-padding-top:${RFValue(123)}px;
-flex:1;
-justify-content:center;
-`
+
+        width:${RFValue(300)}px;
+        padding: ${RFValue(10)}px;
+        `
 
 export const Star = styled(MaterialCommunityIcons).attrs({
         name:"star",

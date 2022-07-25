@@ -5,6 +5,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { Button } from "../../components/Button";
 import { PasswordInput } from "../../components/PasswordInput";
 import { TextInput } from "../../components/TextInput";
+import { useDimesion } from "../../utils/dimensions";
 import * as SignInStyle from "./styles";
 
 
@@ -17,10 +18,10 @@ export function SignIn(){
 
     return (
         <SignInStyle.Container>
-        <SignInStyle.HalfContainer/>
-
      
-      <SignInStyle.Form>
+      <SignInStyle.HalfContainer
+      landscape={useDimesion().landscape}>
+        <SignInStyle.Form>
         <SignInStyle.Title> Faça o login! </SignInStyle.Title>
         <SignInStyle.Label> Username: </SignInStyle.Label>
         <TextInput
@@ -35,6 +36,7 @@ export function SignIn(){
         focusable={false}
       />
 
+
         <SignInStyle.ButtonContainer>
             <Button
             style={{width:RFValue(145)}}
@@ -47,8 +49,12 @@ export function SignIn(){
             title="SIGN IN" 
             onPress={()=>{}}/>
         </SignInStyle.ButtonContainer>
+  
         </SignInStyle.Form>
+        </SignInStyle.HalfContainer>
 
+     
+      
         </SignInStyle.Container>
     )
 

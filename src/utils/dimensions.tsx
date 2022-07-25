@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dimensions } from "react-native";
 
 
@@ -7,6 +7,10 @@ import { Dimensions } from "react-native";
 export function useDimesion(){
 
     const [landscape, setLandscape] = useState<boolean>(false);
+
+    useEffect(()=>{
+        isPortrait() ? setLandscape(false) : setLandscape(true)
+    },[]);
 
     Dimensions.addEventListener('change', ()=>{
             isPortrait() ? setLandscape(false) : setLandscape(true)
