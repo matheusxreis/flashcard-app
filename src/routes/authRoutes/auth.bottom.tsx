@@ -22,9 +22,9 @@ export function BottomAuthRoutes(){
             headerShown: true,
         }}
                        shifting
-        inactiveColor={theme.colors.backgroundPrimary}
+        inactiveColor={theme.colors.textTertiary}
         activeColor={theme.colors.primary}
-        barStyle={{ 
+            barStyle={{ 
             
             backgroundColor: theme.colors.backgroundSecondary}}
         initialRouteName="Home">

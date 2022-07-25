@@ -1,13 +1,16 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons"
 import { useNavigation } from "@react-navigation/native"
 import React from "react"
 import { Image } from "react-native"
 import { RFValue } from "react-native-responsive-fontsize"
+import { useTheme } from "styled-components"
 import { Button } from "../../components/Button"
 import { useDimesion } from "../../utils/dimensions"
 import * as Component from "./styles"
 
 export function Home(){
-    const nav = useNavigation()
+    const nav = useNavigation();
+    const theme = useTheme();
 
     function goToLoginPage(){
         nav.navigate("SignIn")
@@ -27,13 +30,18 @@ export function Home(){
         <Component.WoudLikeUpgrade>
             O que acha de dar um upgrade na memória e nos estudos?
         </Component.WoudLikeUpgrade>
-        <Image
+        <MaterialCommunityIcons
+        name="brain"
+        size={190}
+        color={theme.colors.primary}
+        />
+        {/* <Image
         style={{
             height: 200,
-            width: 200,
+            width: 300,
         }}
-        source={require("../../imgs/brain.jpg")}
-        />
+        source={require("../../imgs/brain2.png")}
+        /> */}
         
 
         <Component.WrapperHalf>

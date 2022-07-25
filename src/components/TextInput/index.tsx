@@ -14,6 +14,8 @@ export function TextInput(props: MyProps){
     return (
      
         <I
+        placeholderTextColor={theme.colors.primary}
+        theme={{colors: { text: theme.colors.textPrimary }}}
         underlineColor={theme.colors.primary}
         activeUnderlineColor={theme.colors.primary}
         style={{

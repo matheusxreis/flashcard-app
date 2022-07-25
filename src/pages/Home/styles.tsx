@@ -16,7 +16,8 @@ export const Container = styled.ScrollView.attrs({
     },
 })`
 //padding: 0px ${RFValue(10)}px
-  
+background-color: ${({theme})=>theme.colors.backgroundPrimary};
+
     
 `
 export const HalfContainer = styled.ScrollView.attrs<IScrollView>({
@@ -26,14 +27,15 @@ export const HalfContainer = styled.ScrollView.attrs<IScrollView>({
 })`
 
         background-color: ${({theme})=>theme.colors.backgroundSecondary};
-        width: ${RFPercentage(51)}px;
+        width: 100%;
         height: ${({landscape})=>landscape ? RFValue(290) : RFValue(460)}px;
        
         padding: ${RFValue(10)}px ${RFValue(10)}px;
-    border:2px solid ${({theme})=>theme.colors.backgroundPrimary};
+            border:2px solid ${({theme})=>theme.colors.backgroundSecondary};
         position:absolute;
         bottom: 0;
         right:0;
+        
       
 `
 

@@ -1,7 +1,9 @@
 import React from "react";
-import { ButtonProps } from "react-native";
+import { ButtonProps, View } from "react-native";
 import { Button as B } from 'react-native-paper';
-
+import { useTheme } from "styled-components";
+import { Text } from "react-native"
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 interface IButton extends ButtonProps {
     onPress:()=>void;
@@ -12,7 +14,7 @@ interface IButton extends ButtonProps {
 
 export function Button({title, onPress, icon, secondary = false, ...rest}:IButton){
 
-
+    const theme = useTheme(); 
     function getButtonMode(){
         if(secondary){
             return "outlined"
@@ -24,12 +26,30 @@ export function Button({title, onPress, icon, secondary = false, ...rest}:IButto
     return (
             <B 
             {...rest}
-            color="#397AF9"
-            icon={icon || ""}
+            
+            color={theme.colors.primary}
+            
             mode={getButtonMode()}  
             onPress={onPress}
+           
+
             >
-                {title}
+             {secondary === false ? (
+                   <>
+                 <MaterialCommunityIcons
+                 color={"#fff"}
+                 size={20}
+                 name={icon||""}/>
+                <Text style={{color: "#FFF"}}> {title} </Text>
+                </>   
+             ):(
+                 <>
+             <MaterialCommunityIcons
+                 color={theme.colors.primary}
+                 size={20}
+                 name={icon||""}/>
+             <Text> {title} </Text>  
+             </>)}
             </B>
     )
 }

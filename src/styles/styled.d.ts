@@ -1,10 +1,10 @@
 import "styled-components"
-import { theme } from "./theme"
+import { swamp, theme } from "./theme"
 
 
 declare module "styled-components" {
 
-    type ThemeType = typeof theme;
+    type ThemeType = typeof swamp;
 
 
     export interface DefaultTheme extends ThemeType {};

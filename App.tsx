@@ -26,6 +26,10 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './src/styles/theme';
 import { BottomAuthRoutes } from './src/routes/authRoutes/auth.bottom';
 import { Routes } from './src/routes';
+import { Provider } from 'react-redux';
+import { store, persistor } from './src/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { MyThemeProvider } from './src/styles/themeProvider';
 
 export default function App() {
 
@@ -43,11 +47,15 @@ export default function App() {
   };
 
   return (
-   <ThemeProvider theme={theme}>
+    <Provider store={store}>
+    <PersistGate persistor={persistor}>
+   <MyThemeProvider>
       <View style={styles.container}>
        <Routes />
        </View>
-    </ThemeProvider>
+       </MyThemeProvider>
+    </PersistGate>
+    </Provider>
    
   );
 }

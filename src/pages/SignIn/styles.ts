@@ -15,7 +15,8 @@ export const Container = styled.ScrollView.attrs({
     })`
     //padding: 0px ${RFValue(10)}px
       
-        
+    background-color: ${({theme})=>theme.colors.backgroundPrimary};
+ 
     `
 export const HalfContainer = styled.ScrollView.attrs({
         contentContainerStyle: {
@@ -26,7 +27,7 @@ export const HalfContainer = styled.ScrollView.attrs({
 
         height: ${({landscape})=> landscape ? RFValue(230) :RFValue(350)}px;
         background-color: ${({theme})=>theme.colors.backgroundSecondary};
-        width: ${RFValue(350)}px;
+        width: 100%;
         position:absolute;
         bottom:0;
        
@@ -50,7 +51,7 @@ export const ButtonContainer = styled.View`
 export const Title = styled.Text`
         font-size: ${RFValue(20)}px;
         font-family: ${({theme})=>theme.fonts.medium};
-        color: ${({theme})=>theme.colors.primaryText};
+        color: ${({theme})=>theme.colors.textPrimary};
 `
 
 export const TitleFlashcard = styled.Text`
@@ -66,7 +67,7 @@ export const Label = styled.Text`
         font-size: ${RFValue(15)}px;
         padding-top: ${RFValue(10)}px;
         font-family: ${({theme})=>theme.fonts.light};
-        color: ${({theme})=>theme.colors.primaryText};
+        color: ${({theme})=>theme.colors.textPrimary};
 
 `
 
