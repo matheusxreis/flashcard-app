@@ -25,14 +25,14 @@ export function SignIn(){
         <SignInStyle.Title> Faça o login! </SignInStyle.Title>
         <SignInStyle.Label> Usuário: </SignInStyle.Label>
         <TextInput
-        placeholder="Type your username:"
+        placeholder="Digite seu nome de usuário:"
         focusable={false}
       />
 
         <SignInStyle.Label> Senha: </SignInStyle.Label>
 
         <PasswordInput
-        placeholder="Type your password:"
+        placeholder="Digite sua senha:"
         focusable={false}
       />
 
@@ -41,12 +41,12 @@ export function SignIn(){
             <Button
             style={{width:RFValue(145)}}
             secondary
-            title="REGISTER" 
+            title="NÃO TEM CONTA?" 
             onPress={()=>{}}/>
             <Button
             style={{width:RFValue(145)}}
             icon="login-variant"
-            title="SIGN IN" 
+            title="ENTRAR" 
             onPress={()=>{}}/>
         </SignInStyle.ButtonContainer>
   
