@@ -1,3 +1,5 @@
+import 'react-native-gesture-handler';
+
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
@@ -14,6 +16,8 @@ Roboto_500Medium,
 Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './src/styles/theme';
+import { BottomAuthRoutes } from './src/routes/authRoutes/auth.bottom';
+import { Routes } from './src/routes';
 
 export default function App() {
 
@@ -32,7 +36,7 @@ export default function App() {
   return (
    <ThemeProvider theme={theme}>
       <View style={styles.container}>
-        <SignIn />
+       <Routes />
        </View>
     </ThemeProvider>
    
@@ -42,7 +46,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === "ios" ? 50 : 0,
+    paddingTop: Platform.OS === "ios" ? 0 : 0,
     backgroundColor: 'rgba(57, 122, 249, 0.2)',
     width:'100%'
    

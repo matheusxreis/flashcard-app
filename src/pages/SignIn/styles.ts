@@ -6,6 +6,7 @@ import styled from "styled-components/native"
 export const Container = styled.View`
 
         flex:1;
+        background:${({theme})=>theme.colors.backgroundPrimary};
         width:100%;
         justify-content:center;
         padding: 0px ${RFValue(24)}px;
@@ -20,7 +21,9 @@ export const HalfContainer = styled.View`
         position:absolute;
         bottom: 0;
         right:0;
-        border-radius: ${RFValue(20)}px;
+        borderTopLeftRadius: ${RFValue(20)}px;
+        borderTopRightRadius: ${RFValue(20)}px;
+
 `
 
 
