@@ -1,4 +1,5 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Text } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
@@ -15,7 +16,12 @@ import * as SignInStyle from "./styles";
 
 export function SignIn(){
 
-  const { translation } = useTranslationService()
+  const { translation } = useTranslationService();
+  const nav = useNavigation();
+
+  function goToSignUp(){
+    nav.navigate("SignUp")
+  }
 
     return (
         <SignInStyle.Container>
@@ -43,7 +49,7 @@ export function SignIn(){
             style={{width:RFValue(145)}}
             secondary
             title={translation("signIn.signUpButton")} 
-            onPress={()=>{}}/>
+            onPress={()=>{goToSignUp()}}/>
             <Button
             style={{width:RFValue(145)}}
             icon="login-variant"

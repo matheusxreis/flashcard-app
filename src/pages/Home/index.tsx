@@ -15,7 +15,12 @@ export function Home(){
 
     function goToLoginPage(){
         nav.navigate("SignIn")
-    }
+    };
+
+    function goToSignUpPage(){
+        console.log("a")
+        nav.navigate("SignUp")
+    };
 
     const { translation } = useTranslationService();
 
@@ -61,7 +66,8 @@ export function Home(){
             style={{ width: RFValue(250)}}
             title={translation("home.signUpButton")}
             secondary
-            onPress={()=>{}}
+            
+            onPress={()=>goToSignUpPage()}
             />
         </Component.ButtonContainer>
         <Button  style={{ 

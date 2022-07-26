@@ -9,10 +9,11 @@ interface IButton extends ButtonProps {
     onPress:()=>void;
     title: string;
     secondary?: boolean;
+    disable?:boolean;
     icon?:string;
 }
 
-export function Button({title, onPress, icon, secondary = false, ...rest}:IButton){
+export function Button({title, onPress, icon, secondary = false, disable = false, ...rest}:IButton){
 
     const theme = useTheme(); 
     function getButtonMode(){
@@ -27,10 +28,10 @@ export function Button({title, onPress, icon, secondary = false, ...rest}:IButto
             <B 
             {...rest}
             
-            color={theme.colors.primary}
+            color={disable ? theme.colors.textTertiary : theme.colors.primary}
             
             mode={getButtonMode()}  
-            onPress={onPress}
+            onPress={disable ? ()=>{} : onPress}
            
 
             >
