@@ -5,6 +5,7 @@ import { Image } from "react-native"
 import { RFValue } from "react-native-responsive-fontsize"
 import { useTheme } from "styled-components"
 import { Button } from "../../components/Button"
+import { useTranslationService } from "../../services/translation/useTranslationService"
 import { useDimesion } from "../../utils/dimensions"
 import * as Component from "./styles"
 
@@ -15,12 +16,16 @@ export function Home(){
     function goToLoginPage(){
         nav.navigate("SignIn")
     }
+
+    const { translation } = useTranslationService();
+
+
     return (
         <Component.Container>
 
            
             <Component.Greetings> FlashCardApp </Component.Greetings>
-            <Component.Description> Aplicativo de FlashCards, 100% brasileiro. </Component.Description>
+            <Component.Description> {translation("signIn.description")} </Component.Description>
        
             
 

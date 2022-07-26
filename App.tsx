@@ -30,6 +30,7 @@ import { Provider } from 'react-redux';
 import { store, persistor } from './src/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { MyThemeProvider } from './src/styles/themeProvider';
+import './src/services/translation/i18n';
 
 export default function App() {
 

@@ -1,0 +1,22 @@
+{
+    "signIn": {
+        "description": "Aplicativo de FlashCards, 100% brasileiro."
+    },
+
+    "preferences": {
+        "theme": {
+            "title": "Tema",
+            "light": "Planície (padrão/claro)",
+            "dark": "Pântano (escuro)",
+            "mountain": "Montanha",
+            "florest": "Floresta",
+            "island": "Ilha"
+        },
+        "language": {
+            "title":"Idioma",
+            "ptBr":"Português (Brasil)",
+            "enUs": "English (US)",
+            "esEs": "Español (ES)"
+        }
+}
+}

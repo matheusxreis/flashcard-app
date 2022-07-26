@@ -1,0 +1,21 @@
+{
+    "signIn": {
+        "description": "Aplicación FlashCards, 100% brasileña."
+    },
+    "preferences": {
+        "theme": {
+            "title": "Tema",
+            "light": "Tierra Plana (patrón/claro)",
+            "dark": "Pantano (oscuro)",
+            "mountain": "Montaña",
+            "florest": "Bosque",
+            "island": "Isla"
+        },
+        "language": {
+            "title":"Idioma",
+            "ptBr":"Português (Brasil)",
+            "enUs": "English (US)",
+            "esEs": "Español (ES)"
+        }
+    }
+}

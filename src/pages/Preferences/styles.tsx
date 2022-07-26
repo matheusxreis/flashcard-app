@@ -13,7 +13,8 @@ export const Container = styled.View`
 
 
 export const PreferencesList = styled.FlatList`
-    
+    height:auto;
+    flex-grow:0;
 `
 
 export const TitleListContainer = styled.View`

@@ -4,11 +4,11 @@ interface IPossibleTheme {
 }
 
 const possibleThemes: IPossibleTheme[] = [
-    { title: "Planicie (padrão/light)", id: 1},
-    { title: "Pântano (dark)", id:2},
-    { title: "Montanha", id:3 },
-    { title: "Floresta", id: 4},
-    { title: "Ilha", id: 5}
+    { title: "preferences.theme.light", id: 1},
+    { title: "preferences.theme.dark", id:2},
+    { title: "preferences.theme.mountain", id:3 },
+    { title: "preferences.theme.florest", id: 4},
+    { title: "preferences.theme.island", id: 5}
 ]
 
 export { possibleThemes, IPossibleTheme }

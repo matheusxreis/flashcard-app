@@ -1,0 +1,22 @@
+{
+    "signIn": {
+        "description": "FlashCards application, 100% Brazilian."
+    },
+    "preferences": {
+        "theme": {
+            "title": "Theme",
+            "light": "Plains (default/light)",
+            "dark": "Swamp (dark)",
+            "mountain": "Mountain",
+            "florest": "Florest",
+            "island": "Island"
+        },
+        "language": {
+            "title":"Language",
+            "ptBr":"Português (Brasil)",
+            "enUs": "English (US)",
+            "esEs": "Español (ES)"
+        }
+        
+    }
+}
