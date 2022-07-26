@@ -4,11 +4,14 @@ import { Button } from "../../components/Button";
 import { PasswordInput } from "../../components/PasswordInput";
 import { ProgressBar } from "../../components/ProgressBar";
 import { TextInput } from "../../components/TextInput";
+import { useTranslationService } from "../../services/translation/useTranslationService";
 import * as Component from "./styles";
 
 type decimal = 0.1 | 0.2 | 0.3 | 0.4 | 0.5 | 0.6 | 0.7 | 0.8 | 0.9 | 1.0;
 
 export function SignUp(){
+
+        const { translation } = useTranslationService();
 
         const [username, setUsername] = useState<string>("");
         const [email, setEmail] = useState<string>("");
@@ -67,10 +70,10 @@ export function SignUp(){
 
             <Component.HalfContainer>
                 <Component.Title>
-                    Faça seu registro.
+                   {translation("signUp.title")}
                 </Component.Title>
                 <Component.Description>
-                    É rápido, simples e fácil!
+                    {translation("signUp.description")}
                 </Component.Description>
 
                 <Component.ProgressContainer>
@@ -89,34 +92,34 @@ export function SignUp(){
 
                     {step !== 3 && (
                     <>
-                    <Component.Label> Coloque o nome de usuário: </Component.Label>
+                    <Component.Label> {translation("signUp.usernameInputLabel")}</Component.Label>
                     <TextInput 
                     value={username}
                     onChangeText={setUsername}
-                    placeholder="Nome de usuário:"
+                    placeholder={translation("signUp.usernameInputPlaceholder")}
                     />
-                    <Component.Label> Coloque o email: </Component.Label>
+                    <Component.Label> {translation("signUp.emailInputLabel")} </Component.Label>
                     <TextInput 
                     value={email}
                     onChangeText={setEmail}
-                    placeholder="E-mail:"
+                    placeholder=  {translation("signUp.emailInputPlaceholder")}
                     />
                     </>
                     )}
 
                     {step === 3 && (
                         <>
-                    <Component.Label> Coloque a senha: </Component.Label>
+                    <Component.Label> {translation("signUp.passwordInputLabel")} </Component.Label>
                     <PasswordInput 
                     value={password}
                     onChangeText={setPassword}
-                    placeholder="Senha:"
+                    placeholder={translation("signUp.passwordInputPlaceholder")}
                     />
-                    <Component.Label> Confirme sua senha: </Component.Label>
+                    <Component.Label> {translation("signUp.confirmPasswordInputLabel")} </Component.Label>
                     <PasswordInput 
                     value={confirmPassword}
                     onChangeText={setConfirmPassword}
-                    placeholder="Confirme sua senha:"
+                    placeholder={translation("signUp.confirmPasswordInputPlaceholder")}
                     />
                         </>
                     )}
@@ -130,7 +133,7 @@ export function SignUp(){
                         <Button
                         disable={step===1}
                         secondary
-                        title="Continuar"
+                        title={translation("signUp.continueButton")}
                         onPress={()=>{setStep(3)}}
                         />
                         )}
@@ -139,12 +142,12 @@ export function SignUp(){
                             <>
                         <Button
                         secondary
-                        title="Passo 1"
+                        title={translation("signUp.backButton")}
                         onPress={()=>{backStep1()}}
                         />
                         <Button
                         disable={getProgress()!==1.0}
-                        title="Registrar"
+                        title={translation("signUp.signUpButton")}
                         onPress={()=>{registerUser()}}
                         />
                         </>

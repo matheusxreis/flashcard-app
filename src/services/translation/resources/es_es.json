@@ -15,6 +15,21 @@
         "signInButton":"Iniciar",
         "signUpButton":"Registro"
     },
+    "signUp": {
+        "title":"Regístrate en nuestra plataforma.",
+        "description": "Es rápido, simple y fácil.",
+        "usernameInputLabel":"Ingrese su nombre de usuario:",
+        "usernameInputPlaceholder": "Nombre de usuario",
+        "emailInputLabel":"Ingrese su correo electrónico:",
+        "emailInputPlaceholder":"Correo electrónico",
+        "continueButton": "Continuar",
+        "passwordInputLabel":"Ingrese su contraseña:",
+        "passwordInputPlaceholder":"Contraseña",
+        "confirmPasswordInputLabel":"Confirma tu contraseña:",
+        "confirmPasswordInputPlaceholder":"Confirma tu contraseña",
+        "backButton":"Paso 1",
+        "signUpButton":"Registrarse"
+    },
     "preferences": {
         "theme": {
             "title": "Tema",

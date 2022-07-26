@@ -15,6 +15,21 @@
         "signInButton":"Sign In",
         "signUpButton":"Sign Up"
     },
+    "signUp": {
+        "title":"Sign up in our platform.",
+        "description": "It's fast, simple and easy.",
+        "usernameInputLabel":"Put your username:",
+        "usernameInputPlaceholder": "Username",
+        "emailInputLabel":"Put your email:",
+        "emailInputPlaceholder":"E-mail",
+        "continueButton": "Continue",
+        "passwordInputLabel":"Put your password:",
+        "passwordInputPlaceholder":"Password",
+        "confirmPasswordInputLabel":"Confirm your password:",
+        "confirmPasswordInputPlaceholder":"Confirm your password",
+        "backButton":"Step 1",
+        "signUpButton":"Sign Up"
+    },
     "preferences": {
         "theme": {
             "title": "Theme",

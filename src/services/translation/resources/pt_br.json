@@ -15,6 +15,21 @@
         "signInButton":"Entrar",
         "signUpButton":"Registrar"
     },
+    "signUp": {
+        "title":"Faça seu registro.",
+        "description": "É rápido, simples e fácil.",
+        "usernameInputLabel":"Coloque o nome de usuário:",
+        "usernameInputPlaceholder": "Nome de usuário",
+        "emailInputLabel":"Coloque o seu email",
+        "emailInputPlaceholder":"E-mail",
+        "continueButton": "Continuar",
+        "passwordInputLabel":"Coloque a senha:",
+        "passwordInputPlaceholder":"Senha",
+        "confirmPasswordInputLabel":"Confirme sua senha:",
+        "confirmPasswordInputPlaceholder":"Confirme sua senha",
+        "backButton":"Passo 1",
+        "signUpButton":"Registrar"
+    },
     "preferences": {
         "theme": {
             "title": "Tema",
