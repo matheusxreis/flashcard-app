@@ -1,6 +1,19 @@
 {
+    "home": {
+        "description": "FlashCards application, 100% Brazilian.",
+        "whatYouThink": "What you think about an upgrade in your memory and studies?",
+        "signInButton": "Do you have an account?",
+        "signUpButton":"Are you new here?",
+        "githubButton": "Help in Github"
+    },
     "signIn": {
-        "description": "FlashCards application, 100% Brazilian."
+        "title": "Login",
+        "usernameInputLabel": "User:",
+        "usernameInputPlaceholder":"Type your username or email.",
+        "passwordInputLabel":"Password:",
+        "passwordInputPlaceholder":"Type your password.",
+        "signInButton":"Sign In",
+        "signUpButton":"Sign Up"
     },
     "preferences": {
         "theme": {

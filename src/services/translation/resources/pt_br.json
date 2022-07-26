@@ -1,8 +1,20 @@
 {
-    "signIn": {
-        "description": "Aplicativo de FlashCards, 100% brasileiro."
+    "home": {
+        "description": "Aplicativo de FlashCards, 100% brasileiro.",
+        "whatYouThink": "O que acha de dar um upgrade na memória e nos estudos?",
+        "signInButton": "Já tem uma conta?",
+        "signUpButton":"É novo aqui?",
+        "githubButton": "Contribuir no Github"
     },
-
+    "signIn": {
+        "title": "Faça o login",
+        "usernameInputLabel": "Usuário:",
+        "usernameInputPlaceholder":"Digite seu nome de usuário ou email.",
+        "passwordInputLabel":"Senha:",
+        "passwordInputPlaceholder":"Digite sua senha.",
+        "signInButton":"Entrar",
+        "signUpButton":"Registrar"
+    },
     "preferences": {
         "theme": {
             "title": "Tema",

@@ -5,6 +5,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 import { Button } from "../../components/Button";
 import { PasswordInput } from "../../components/PasswordInput";
 import { TextInput } from "../../components/TextInput";
+import { useTranslationService } from "../../services/translation/useTranslationService";
 import { useDimesion } from "../../utils/dimensions";
 import * as SignInStyle from "./styles";
 
@@ -14,7 +15,7 @@ import * as SignInStyle from "./styles";
 
 export function SignIn(){
 
-
+  const { translation } = useTranslationService()
 
     return (
         <SignInStyle.Container>
@@ -22,17 +23,17 @@ export function SignIn(){
       <SignInStyle.HalfContainer
       landscape={useDimesion().landscape}>
         <SignInStyle.Form>
-        <SignInStyle.Title> Faça o login! </SignInStyle.Title>
-        <SignInStyle.Label> Usuário: </SignInStyle.Label>
+        <SignInStyle.Title> {translation("signIn.title")} </SignInStyle.Title>
+        <SignInStyle.Label> {translation("signIn.usernameInputLabel")} </SignInStyle.Label>
         <TextInput
-        placeholder="Digite seu nome de usuário:"
+        placeholder={translation("signIn.usernameInputPlaceholder")}
         focusable={false}
       />
 
-        <SignInStyle.Label> Senha: </SignInStyle.Label>
+        <SignInStyle.Label> {translation("signIn.passwordInputLabel")} </SignInStyle.Label>
 
         <PasswordInput
-        placeholder="Digite sua senha:"
+        placeholder={translation("signIn.passwordInputPlaceholder")}
         focusable={false}
       />
 
@@ -41,12 +42,12 @@ export function SignIn(){
             <Button
             style={{width:RFValue(145)}}
             secondary
-            title="NÃO TEM CONTA?" 
+            title={translation("signIn.signUpButton")} 
             onPress={()=>{}}/>
             <Button
             style={{width:RFValue(145)}}
             icon="login-variant"
-            title="ENTRAR" 
+            title={translation("signIn.signInButton")} 
             onPress={()=>{}}/>
         </SignInStyle.ButtonContainer>
   

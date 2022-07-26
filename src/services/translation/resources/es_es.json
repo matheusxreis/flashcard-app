@@ -1,6 +1,19 @@
 {
+    "home": {
+        "description": "Aplicación FlashCards, 100% brasileña.",
+        "whatYouThink": "¿Qué piensas acerca de mejorar tu memoria y tus estudios?",
+        "signInButton": "¿Ya tienes una cuenta?",
+        "signUpButton":"¿Eres nuevo aquí?",
+        "githubButton": "Contribuir en Github"
+    },
     "signIn": {
-        "description": "Aplicación FlashCards, 100% brasileña."
+        "title": "Acceso",
+        "usernameInputLabel": "Usuario:",
+        "usernameInputPlaceholder":"Ingrese su nombre de usuario or email.",
+        "passwordInputLabel":"Contraseña:",
+        "passwordInputPlaceholder":"Escribe tu contraseña.",
+        "signInButton":"Iniciar",
+        "signUpButton":"Registro"
     },
     "preferences": {
         "theme": {

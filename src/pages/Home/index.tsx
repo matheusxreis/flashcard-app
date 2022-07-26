@@ -25,7 +25,7 @@ export function Home(){
 
            
             <Component.Greetings> FlashCardApp </Component.Greetings>
-            <Component.Description> {translation("signIn.description")} </Component.Description>
+            <Component.Description> {translation("home.description")} </Component.Description>
        
             
 
@@ -33,7 +33,7 @@ export function Home(){
         landscape={useDimesion().landscape}>
             
         <Component.WoudLikeUpgrade>
-            O que acha de dar um upgrade na memória e nos estudos?
+            {translation("home.whatYouThink")}
         </Component.WoudLikeUpgrade>
         <MaterialCommunityIcons
         name="brain"
@@ -54,12 +54,12 @@ export function Home(){
         <Component.ButtonContainer>
             <Button
             style={{ width: RFValue(250)}}
-            title="Já tem uma conta?"
+            title={translation("home.signInButton")}
             onPress={()=>goToLoginPage()}
             />
             <Button
             style={{ width: RFValue(250)}}
-            title="É novo aqui?"
+            title={translation("home.signUpButton")}
             secondary
             onPress={()=>{}}
             />
@@ -67,7 +67,7 @@ export function Home(){
         <Button  style={{ 
 
                 width: RFValue(250)}}
-            title="Contribuir no github"
+            title={translation("home.githubButton")}
             secondary
             icon="github"
             onPress={()=>{}}
