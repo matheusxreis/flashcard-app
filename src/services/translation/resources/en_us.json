@@ -4,6 +4,7 @@
         "whatYouThink": "What you think about an upgrade in your memory and studies?",
         "signInButton": "Do you have an account?",
         "signUpButton":"Are you new here?",
+        "offlineButton": "Continue offline", 
         "githubButton": "Help in Github"
     },
     "signIn": {

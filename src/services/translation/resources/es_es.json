@@ -4,6 +4,7 @@
         "whatYouThink": "¿Qué piensas acerca de mejorar tu memoria y tus estudios?",
         "signInButton": "¿Ya tienes una cuenta?",
         "signUpButton":"¿Eres nuevo aquí?",
+        "offlineButton": "Continuar sin conexión", 
         "githubButton": "Contribuir en Github"
     },
     "signIn": {

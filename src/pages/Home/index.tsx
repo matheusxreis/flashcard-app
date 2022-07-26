@@ -69,6 +69,12 @@ export function Home(){
             
             onPress={()=>goToSignUpPage()}
             />
+            <Button
+            style={{ width: RFValue(250)}}
+            title={translation("home.offlineButton")}
+            secondary
+            onPress={()=>{}}
+            />
         </Component.ButtonContainer>
         <Button  style={{ 
 
