@@ -30,5 +30,9 @@
             "enUs": "English (US)",
             "esEs": "Español (ES)"
         }
-}
+    },
+    "screens": {    
+        "home":"Início",
+        "settings":"Configurações"
+    }
 }

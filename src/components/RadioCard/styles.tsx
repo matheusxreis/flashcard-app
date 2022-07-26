@@ -3,7 +3,7 @@ import styled from "styled-components/native"
 
 
 export const Container = styled.TouchableOpacity.attrs({
-    activeOpacity: 1
+    activeOpacity: 0.8
 })`
     
     display:flex;

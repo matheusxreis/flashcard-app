@@ -31,5 +31,9 @@
             "esEs": "Español (ES)"
         }
         
+    },
+    "screens": {    
+        "home":"Home",
+        "settings":"Settings"
     }
 }

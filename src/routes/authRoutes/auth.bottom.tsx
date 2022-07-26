@@ -7,6 +7,7 @@ import { useTheme } from "styled-components";
 import { SignIn } from "../../pages/SignIn";
 import { HomeStackRoutes } from "./home.stack";
 import { ConfigStackRoutes } from "./config.stack.tsx";
+import { useTranslationService } from "../../services/translation/useTranslationService";
 
 
 const Bottom = createMaterialBottomTabNavigator();
@@ -15,13 +16,16 @@ const Bottom = createMaterialBottomTabNavigator();
 export function BottomAuthRoutes(){
 
     const theme = useTheme();
+    const { translation } = useTranslationService();
+
+
     return (
       
         <Bottom.Navigator
         screenOptions={{
             headerShown: true,
         }}
-                       shifting
+        shifting
         inactiveColor={theme.colors.textTertiary}
         activeColor={theme.colors.primary}
             barStyle={{ 
@@ -29,11 +33,11 @@ export function BottomAuthRoutes(){
             backgroundColor: theme.colors.backgroundSecondary}}
         initialRouteName="Home">
             <Bottom.Screen 
-            name="Home"
+            name={"Home"}
             component={HomeStackRoutes}
 
             options={{
-                title:"Home",
+                title:translation("screens.home"),
                 tabBarIcon: ({color})=>(
                       <MaterialCommunityIcons
                       name="home"
@@ -43,10 +47,10 @@ export function BottomAuthRoutes(){
                 )
             }}      />
             <Bottom.Screen 
-            name="Configurations"
+            name={"Settings"}
             component={ConfigStackRoutes}
             options={{
-                title:"Configurações",
+                title:translation("screens.settings"),
                 tabBarIcon: ({color})=>(
                       <MaterialCommunityIcons
                       name="cog"
