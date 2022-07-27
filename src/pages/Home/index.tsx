@@ -1,3 +1,4 @@
+import "react-native-get-random-values"
 import { MaterialCommunityIcons } from "@expo/vector-icons"
 import { useNavigation } from "@react-navigation/native"
 import React from "react"
@@ -7,11 +8,19 @@ import { useTheme } from "styled-components"
 import { Button } from "../../components/Button"
 import { useTranslationService } from "../../services/translation/useTranslationService"
 import { useDimesion } from "../../utils/dimensions"
+
+import {v4 as uuid} from "uuid";
+import { AvatarGenerator } from 'random-avatar-generator';
+
 import * as Component from "./styles"
+import { useDispatch } from "react-redux"
+import { signIn } from "../../store/user/actions"
+
 
 export function Home(){
     const nav = useNavigation();
     const theme = useTheme();
+    const dispatch = useDispatch();
 
     function goToLoginPage(){
         nav.navigate("SignIn")
@@ -21,6 +30,26 @@ export function Home(){
         console.log("a")
         nav.navigate("SignUp")
     };
+
+    function generateUsername(){
+        return "motta"+uuid().slice(2,11).replace("-", "x");
+    }
+
+    function handleOfflineSignIn(){
+
+        const name = generateUsername();
+        const id = uuid();
+        const photo = new AvatarGenerator().generateRandomAvatar()
+        
+
+        console.log(name, id, photo);
+        dispatch(signIn({
+            id,
+            name,
+            photo
+        }))
+
+    }
 
     const { translation } = useTranslationService();
 
@@ -73,7 +102,7 @@ export function Home(){
             style={{ width: RFValue(250)}}
             title={translation("home.offlineButton")}
             secondary
-            onPress={()=>{}}
+            onPress={()=>handleOfflineSignIn()}
             />
         </Component.ButtonContainer>
         <Button  style={{ 
