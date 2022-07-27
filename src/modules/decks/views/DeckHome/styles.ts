@@ -3,14 +3,13 @@ import styled from "styled-components/native";
 
 
 
-export const Container = styled.ScrollView.attrs({
-    contentContainerStyle:{
-        flex:1,
-        alignItems:"center",
-    },
-})`
+export const Container = styled.View`
     
+    flex:1;
+ 
     background-color: ${({theme})=>theme.colors.backgroundPrimary};
+
+
 
     `
 
@@ -25,5 +24,12 @@ export const SearchContainer = styled.View`
 `
 
 export const FABContainer = styled.View`
+
+`
+
+export const DeckList = styled.FlatList`
+    height:auto;
+    width:100%;
+    padding: 0px ${RFValue(10)}px
 
 `

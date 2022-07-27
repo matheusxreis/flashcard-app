@@ -7,6 +7,6 @@ export function addDeck(deck: Deck){
 
     return {
         type: deckTypes.addDeck,
-        payload: {deck}
+        payload: {deck:deck}
     }
 }
