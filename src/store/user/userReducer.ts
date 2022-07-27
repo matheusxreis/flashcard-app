@@ -5,7 +5,7 @@ import { userTypes } from "./types";
 
 
 
-const initialState = {
+let initialState = {
     name:"",
     id:"",
     photo:"",

@@ -67,6 +67,7 @@
         "home":"Home",
         "settings":"Settings",
         "signIn":"Sign In",
-        "signUp":"Sign Up"
+        "signUp":"Sign Up",
+        "addDeck":"Add Deck"
     }
 }

@@ -27,6 +27,9 @@ setTimeout(async () =>{
       resources,
       fallbackLng,
       debug:true, 
+      interpolation: {
+        escapeValue: false
+      },
   
   });
 })

@@ -16,10 +16,14 @@ import { faker } from "@faker-js/faker"
 import * as Component from "./styles"
 import { useDispatch } from "react-redux"
 import { signIn } from "../../store/user/actions"
+import { StackNavigationProp } from "@react-navigation/stack"
+import { RootStackParamList } from "../../RootStackParamList"
 
+type navType = StackNavigationProp<RootStackParamList>
 
 export function Home(){
-    const nav = useNavigation();
+
+    const nav = useNavigation<navType>();
     const theme = useTheme();
     const dispatch = useDispatch();
 

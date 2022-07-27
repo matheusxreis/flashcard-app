@@ -20,6 +20,9 @@ export function DeckHome(){
         <Component.Container>  
         <Component.SearchContainer>
             <Searchbar 
+            selectionColor={theme.colors.primary}
+            iconColor={theme.colors.primary}
+            underlineColorAndroid={theme.colors.primary}
             placeholder={translation("deckHome.searchInputPlaceholder")}
             value={searchValue}
             onChangeText={setSearchValue}

@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 const persistConfig = {
-    key:"flashcardapp",
+    key:"flashcardapp@states",
     storage: AsyncStorage
 
 }

@@ -66,6 +66,8 @@
         "home":"Inicio",
         "settings":"Ajustes",
         "signIn":"Iniciar Sesión",
-        "signUp":"Regístrate"
+        "signUp":"Regístrate",
+        "addDeck":"Agregar Mazo"
+
     }
 }

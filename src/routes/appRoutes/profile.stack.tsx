@@ -6,6 +6,7 @@ import { OfflineSignInInfo, UserProfile } from "../../pages/OfflineSignInInfo";
 import { useTranslationService } from "../../services/translation/useTranslationService";
 import { useSelector } from "react-redux";
 import { DeckHome } from "../../pages/DeckHome";
+import { DeckAdd } from "../../pages/DeckAdd";
 
 
 const Stack = createStackNavigator()
@@ -35,6 +36,14 @@ export function ProfileStackRoutes(){
             
             name="HomeScreenLogin" 
             component={user.agreed? DeckHome : OfflineSignInInfo}/>
+
+            <Stack.Screen
+            options={{
+                title: translation("screens.addDeck")
+            }}
+            name="AddDeck"
+            component={DeckAdd}
+            />
         </Stack.Navigator>
     )
 
