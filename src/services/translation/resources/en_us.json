@@ -40,6 +40,12 @@
         "cancelButton":"Cancel",
         "continueButton":"Continue"
     },
+    "deckHome":{
+        "searchInputPlaceholder":"Search your deck",
+        "fab1": "Add card",
+        "fab2": "Add deck",
+        "fab3": "Scan deck"
+    },
     "preferences": {
         "theme": {
             "title": "Theme",

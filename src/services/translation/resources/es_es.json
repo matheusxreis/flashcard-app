@@ -40,6 +40,12 @@
         "cancelButton":"Cancelar",
         "continueButton":"Continuar"
     },
+    "deckHome":{
+        "searchInputPlaceholder":"Busca en tu mazo",
+        "fab1": "Agregar tarjeta",
+        "fab2": "Agregar mazo",
+        "fab3": "Escanear mazo"
+    },
     "preferences": {
         "theme": {
             "title": "Tema",

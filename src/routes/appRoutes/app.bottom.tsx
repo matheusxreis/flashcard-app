@@ -36,8 +36,10 @@ export function BottomAppRoutes(){
             <Bottom.Screen 
             name={"AppRoutes"}
             component={ProfileStackRoutes}
+        
             options={{
-                title:"Home",
+                tabBarBadge:1,
+                title:translation("screens.home"),
                 tabBarIcon: ({color})=>(
                       <MaterialCommunityIcons
                       name="home"

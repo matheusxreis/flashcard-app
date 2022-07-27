@@ -24,6 +24,12 @@ export function userReducer(state = initialState, action:AnyAction){
         }
         case userTypes.signOut:
             return initialState;
+            
+        case userTypes.agree:
+            return {
+                ...state,
+                agreed: true
+            }
     
         default:
             return state;

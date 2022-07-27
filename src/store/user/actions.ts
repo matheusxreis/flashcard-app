@@ -23,3 +23,10 @@ export function signOut(){
         type: userTypes.signOut
     }
 }
+
+
+export function agree(){
+    return {
+        type: userTypes.agree
+    }
+}

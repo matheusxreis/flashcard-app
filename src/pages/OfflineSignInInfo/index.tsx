@@ -6,7 +6,7 @@ import { Avatar } from "react-native-paper";
 import * as Component from "./styles";
 import { Button } from "../../components/Button";
 import { useTheme } from "styled-components";
-import { signOut } from "../../store/user/actions";
+import { agree, signOut } from "../../store/user/actions";
 import { useTranslationService } from "../../services/translation/useTranslationService";
 
 export function OfflineSignInInfo(){
@@ -25,9 +25,13 @@ export function OfflineSignInInfo(){
         dispatch(signOut())
     }
 
+    function handleContinue(){
+        dispatch(agree())
+    }
     function returnImage(): "1" {
         return user.photo || "1"
     }
+
 
     return (
         <Component.Container>
@@ -63,7 +67,7 @@ export function OfflineSignInInfo(){
             />
             <Button
             title= {translation("offlineSignInInfo.continueButton")}       
-            onPress={()=>{}} 
+            onPress={()=>{handleContinue()}} 
             />
             </Component.ButtonContainer>
         </Component.Container>
