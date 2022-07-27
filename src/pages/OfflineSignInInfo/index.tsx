@@ -62,7 +62,7 @@ export function OfflineSignInInfo(){
             onPress={()=>{handleLogOut()}} 
             />
             <Button
-            title= {translation("offlineSignInInfo.continueButton")}       
+            title= {translation("offlineSignInInfo.continueButtongit l")}       
             onPress={()=>{}} 
             />
             </Component.ButtonContainer>
