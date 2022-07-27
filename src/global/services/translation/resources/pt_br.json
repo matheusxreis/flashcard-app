@@ -1,0 +1,72 @@
+{
+    "home": {
+        "description": "Aplicativo de FlashCards, 100% brasileiro.",
+        "whatYouThink": "O que acha de dar um upgrade na memória e nos estudos?",
+        "signInButton": "Já tem uma conta?",
+        "signUpButton":"É novo aqui?",
+        "offlineButton": "Continuar offline", 
+        "githubButton": "Contribuir no Github"
+    },
+    "signIn": {
+        "title": "Faça o login",
+        "usernameInputLabel": "Usuário:",
+        "usernameInputPlaceholder":"Digite seu nome de usuário ou email.",
+        "passwordInputLabel":"Senha:",
+        "passwordInputPlaceholder":"Digite sua senha.",
+        "signInButton":"Entrar",
+        "signUpButton":"Registrar"
+    },
+    "signUp": {
+        "title":"Faça seu registro.",
+        "description": "É rápido, simples e fácil.",
+        "usernameInputLabel":"Coloque o nome de usuário:",
+        "usernameInputPlaceholder": "Nome de usuário",
+        "emailInputLabel":"Coloque o seu email",
+        "emailInputPlaceholder":"E-mail",
+        "continueButton": "Continuar",
+        "passwordInputLabel":"Coloque a senha:",
+        "passwordInputPlaceholder":"Senha",
+        "confirmPasswordInputLabel":"Confirme sua senha:",
+        "confirmPasswordInputPlaceholder":"Confirme sua senha",
+        "backButton":"Passo 1",
+        "signUpButton":"Registrar"
+    },
+    "offlineSignInInfo":{
+        "welcome":"Seja bem-vindo,",
+        "details1":"Você acaba de fazer o login no modo offline.",
+        "details2":"Isso significa que um username e avatar aleatórios lhe foram fornecidos. ",
+        "details3":"A sessão continuará ativa até você fazer o log out nas opções de configuração.",
+        "details4":"O armazenamento dos decks é local, ou seja, ficarão salvos no seu dispositivo independente do login.",
+        "cancelButton":"Cancelar",
+        "continueButton":"Continuar"
+    },
+    "deckHome":{
+        "searchInputPlaceholder":"Pesquise seu deck",
+        "fab1": "Adicionar card",
+        "fab2": "Adicionar deck",
+        "fab3": "Scannear deck"
+    },
+    "preferences": {
+        "theme": {
+            "title": "Tema",
+            "light": "Planície (padrão/claro)",
+            "dark": "Pântano (escuro)",
+            "mountain": "Montanha",
+            "florest": "Floresta",
+            "island": "Ilha"
+        },
+        "language": {
+            "title":"Idioma",
+            "ptBr":"Português (Brasil)",
+            "enUs": "English (US)",
+            "esEs": "Español (ES)"
+        }
+    },
+    "screens": {    
+        "home":"Início",
+        "settings":"Configurações",
+        "signIn":"Entrar",
+        "signUp":"Registrar",
+        "addDeck":"Adicionar Deck"
+    }
+}

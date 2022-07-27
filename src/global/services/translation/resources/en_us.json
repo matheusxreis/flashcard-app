@@ -1,0 +1,73 @@
+{
+    "home": {
+        "description": "FlashCards application, 100% Brazilian.",
+        "whatYouThink": "What you think about an upgrade in your memory and studies?",
+        "signInButton": "Do you have an account?",
+        "signUpButton":"Are you new here?",
+        "offlineButton": "Continue offline", 
+        "githubButton": "Help in Github"
+    },
+    "signIn": {
+        "title": "Login",
+        "usernameInputLabel": "User:",
+        "usernameInputPlaceholder":"Type your username or email.",
+        "passwordInputLabel":"Password:",
+        "passwordInputPlaceholder":"Type your password.",
+        "signInButton":"Sign In",
+        "signUpButton":"Sign Up"
+    },
+    "signUp": {
+        "title":"Sign up in our platform.",
+        "description": "It's fast, simple and easy.",
+        "usernameInputLabel":"Put your username:",
+        "usernameInputPlaceholder": "Username",
+        "emailInputLabel":"Put your email:",
+        "emailInputPlaceholder":"E-mail",
+        "continueButton": "Continue",
+        "passwordInputLabel":"Put your password:",
+        "passwordInputPlaceholder":"Password",
+        "confirmPasswordInputLabel":"Confirm your password:",
+        "confirmPasswordInputPlaceholder":"Confirm your password",
+        "backButton":"Step 1",
+        "signUpButton":"Sign Up"
+    },
+    "offlineSignInInfo":{
+        "welcome":"Welcome,",
+        "details1":"You have just logged in in offline mode.",
+        "details2":"This means that you were given a random username and avatar.",
+        "details3":"The session will remain active until you log out of the configuration options.",
+        "details4":"Decks are stored locally, that is, they will be saved on your device regardless of login.",
+        "cancelButton":"Cancel",
+        "continueButton":"Continue"
+    },
+    "deckHome":{
+        "searchInputPlaceholder":"Search your deck",
+        "fab1": "Add card",
+        "fab2": "Add deck",
+        "fab3": "Scan deck"
+    },
+    "preferences": {
+        "theme": {
+            "title": "Theme",
+            "light": "Plains (default/light)",
+            "dark": "Swamp (dark)",
+            "mountain": "Mountain",
+            "florest": "Florest",
+            "island": "Island"
+        },
+        "language": {
+            "title":"Language",
+            "ptBr":"Português (Brasil)",
+            "enUs": "English (US)",
+            "esEs": "Español (ES)"
+        }
+        
+    },
+    "screens": {    
+        "home":"Home",
+        "settings":"Settings",
+        "signIn":"Sign In",
+        "signUp":"Sign Up",
+        "addDeck":"Add Deck"
+    }
+}
