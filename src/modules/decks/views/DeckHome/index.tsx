@@ -50,7 +50,7 @@ export function DeckHome(){
 
     useEffect(()=>{
 
-        const a = decks.filter( x=> x.title.slice(0, searchValue.length).toUpperCase() === searchValue.toUpperCase());
+        const a = decks?.filter( x=> x?.title.slice(0, searchValue.length).toUpperCase() === searchValue.toUpperCase());
         setFilterDeck(a);
 
     }, [searchValue]);

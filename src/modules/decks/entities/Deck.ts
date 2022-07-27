@@ -11,7 +11,7 @@ export class Deck {
         readonly authorId: string,
         readonly authorName: string, 
         readonly createdAt: number, 
-        readonly cards?: Card[]
+        public cards: Card[] = []
     ){
 
         this.id = v4();

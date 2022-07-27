@@ -4,7 +4,8 @@ import { v4 } from "uuid";
 
     export class Card {
 
-        id:string;
+        readonly id:string;
+        public seen:boolean;
 
         constructor(
             readonly question: string,
@@ -12,6 +13,7 @@ import { v4 } from "uuid";
             readonly deckId: string, 
         ){
             this.id = v4();
+            this.seen = false;
         }
 
     }

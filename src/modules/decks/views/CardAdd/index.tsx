@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Text } from "react-native";
 import { Divider } from "react-native-paper";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "../../../../global/components/Button";
 import { Modal } from "../../../../global/components/Modal";
 import { RadioCard } from "../../../../global/components/RadioCard";
 import { Select } from "../../../../global/components/Select";
 import { TextInput } from "../../../../global/components/TextInput";
+import { addCard } from "../../../../global/store/cards/actions";
 import { getTitle } from "../../../../global/utils/getTitle";
+import { Card } from "../../entities/Card";
 import { Deck } from "../../entities/Deck";
 import * as Component from "./styles";
 
 
 export function CardAdd(){
+
+    
 
     const [modalDecks, setModalDecks] = useState<boolean>(false);
     const [selectedDeck, setSelectedDeck] = useState<Deck>({} as Deck);
@@ -21,7 +25,8 @@ export function CardAdd(){
 
     const [isButtonDisable, setIsButtonDisable] = useState<boolean>(true);
 
-    const decks = useSelector((x:any)=>x.decks)
+    const decks = useSelector((x:any)=>x.decks);
+    const dispatch = useDispatch();
 
 
     function selectValue(){
@@ -29,6 +34,16 @@ export function CardAdd(){
             return getTitle(selectedDeck.title)
         }
         return "Nenhum deck selecionado."
+    }
+
+    function handleAddCard(){
+
+        const newCard = new Card(frontCard, backCard, selectedDeck.id);
+        dispatch(addCard(newCard));
+
+        setFrontCard("");
+        setBackCard("");
+        setSelectedDeck({} as Deck);
     }
 
     useEffect(()=>{
@@ -71,7 +86,7 @@ export function CardAdd(){
         <Component.ButtonContainer>
             <Button
             disable={isButtonDisable}
-            onPress={()=>{}}
+            onPress={()=>handleAddCard()}
             title="Adicionar"/>
         </Component.ButtonContainer>
 

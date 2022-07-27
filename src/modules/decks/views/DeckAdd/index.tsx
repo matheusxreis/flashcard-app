@@ -22,7 +22,8 @@ export function DeckAdd(){
             deckName, 
             user.id, 
             user.name, 
-            new Date().getTime());
+            new Date().getTime()
+            );
 
         console.log(newDeck);
         dispatch(addDeck(newDeck))

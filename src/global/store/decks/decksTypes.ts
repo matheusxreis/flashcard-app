@@ -1,3 +1,4 @@
 export const deckTypes = {
-    addDeck: "@decks/ADD_DECK"
+    addDeck: "@decks/ADD_DECK",
+   
 }
