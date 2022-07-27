@@ -8,6 +8,7 @@ import { useTranslationService } from "../../services/translation/useTranslation
 import { useSelector } from "react-redux";
 import { DeckHome } from "../../../modules/decks/views/DeckHome";
 import { DeckAdd } from "../../../modules/decks/views/DeckAdd";
+import { CardAdd } from "../../../modules/decks/views/CardAdd";
 
 
 const Stack = createStackNavigator()
@@ -45,6 +46,16 @@ export function ProfileStackRoutes(){
             name="DeckAdd"
             component={DeckAdd}
             />
+
+            <Stack.Screen
+            options={{
+                title: "Adicionar Card"
+            }}
+            name="CardAdd"
+            component={CardAdd}
+            />
+
+
         </Stack.Navigator>
     )
 

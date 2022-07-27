@@ -13,6 +13,7 @@ import { Deck } from "../../entities/Deck";
 import { useSelector } from "react-redux";
 import { CardDeck } from "../../../../global/components/CardDeck";
 import { Modal } from "../../../../global/components/Modal";
+import { getTitle } from "../../../../global/utils/getTitle";
 
 type navType = StackNavigationProp<RootStackParamList, "DeckHome">
 
@@ -33,30 +34,28 @@ export function DeckHome(){
 
     function goToAddDeck(){
         nav.navigate("DeckAdd");
-    }
+    };
+    function goToAddCard(){
+        nav.navigate("CardAdd");
+    };
 
     function handleSelectDeck(deck:Deck){
         setSelectedDeck(deck);
         setOpenModalOptions(true);
-    }
+    };
 
     useEffect(()=>{
-            setFilterDeck(decks)
-    }, [decks])
+            setFilterDeck(decks);
+    }, [decks]);
 
     useEffect(()=>{
 
         const a = decks.filter( x=> x.title.slice(0, searchValue.length).toUpperCase() === searchValue.toUpperCase());
-        setFilterDeck(a)
+        setFilterDeck(a);
 
-    }, [searchValue])
+    }, [searchValue]);
 
-    function getTitle(item:string){
-        if(item?.length>8){
-            return item.slice(0, 8) + "..."
-        }
-        return item
-    }
+    
 
     return (
         <Component.Container>  
@@ -84,7 +83,7 @@ export function DeckHome(){
             fabStyle={{backgroundColor: theme.colors.primary}}
             open={openFAB}
             actions={[
-            {icon: "card-plus", label:translation("deckHome.fab1"), onPress:()=>{}},
+            {icon: "card-plus", label:translation("deckHome.fab1"), onPress:()=>{goToAddCard()}},
             {icon: "playlist-plus", label: translation("deckHome.fab2"), onPress:()=>{goToAddDeck()}},
             {icon: "qrcode-scan", label: translation("deckHome.fab3"), onPress:()=>{}}
             ]}

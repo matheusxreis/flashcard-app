@@ -1,4 +1,5 @@
 import { Roboto_500Medium } from "@expo-google-fonts/roboto";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Text, TextInputProps } from "react-native";
 import { TextInput as I } from "react-native-paper";
 import { RFPercentage } from "react-native-responsive-fontsize";
@@ -12,12 +13,14 @@ export function TextInput(props: MyProps){
     
 
     return (
+        
      
         <I
         placeholderTextColor={theme.colors.primary}
         theme={{colors: { text: theme.colors.textPrimary }}}
         underlineColor={theme.colors.primary}
         activeUnderlineColor={theme.colors.primary}
+        
         style={{
                 
                 backgroundColor: theme.colors.backgroundSecondary,
@@ -27,8 +30,9 @@ export function TextInput(props: MyProps){
         value={props.value}
         onChangeText={props.onChangeText}
         mode="flat"/>
-
-       
     )
+     
+       
+        
 
 }

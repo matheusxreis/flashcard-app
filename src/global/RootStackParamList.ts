@@ -4,5 +4,6 @@ export type RootStackParamList = {
     SignUp:null,
     DeckHome:null,
     DeckAdd:null,
+    CardAdd:null
     
 }
