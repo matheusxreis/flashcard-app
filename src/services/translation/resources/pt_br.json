@@ -49,6 +49,8 @@
     },
     "screens": {    
         "home":"Início",
-        "settings":"Configurações"
+        "settings":"Configurações",
+        "signIn":"Entrar",
+        "signUp":"Registrar"
     }
 }

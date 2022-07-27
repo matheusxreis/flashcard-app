@@ -50,6 +50,8 @@
     },
     "screens": {    
         "home":"Home",
-        "settings":"Settings"
+        "settings":"Settings",
+        "signIn":"Sign In",
+        "signUp":"Sign Up"
     }
 }

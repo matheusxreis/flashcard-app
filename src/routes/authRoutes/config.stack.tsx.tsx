@@ -2,12 +2,18 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { useTheme } from "styled-components";
 import { Preferences } from "../../pages/Preferences";
 import { SignIn } from "../../pages/SignIn";
+import { useTranslationService } from "../../services/translation/useTranslationService";
 
 
 const Stack = createStackNavigator()
 
 export function ConfigStackRoutes(){
+
     const theme = useTheme();
+    const { translation } = useTranslationService();
+
+
+
     return (
         <Stack.Navigator
         screenOptions={{
@@ -19,7 +25,7 @@ export function ConfigStackRoutes(){
         }}>
             <Stack.Screen 
             options={{
-                title: "Configurações"
+                title: translation("screens.settings")
             }}
             name="Config" 
             component={Preferences}/>

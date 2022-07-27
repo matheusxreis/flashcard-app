@@ -18,7 +18,6 @@ export const Container = styled.ScrollView.attrs({
 //padding: 0px ${RFValue(10)}px
 background-color: ${({theme})=>theme.colors.backgroundPrimary};
 
-    
 `
 export const HalfContainer = styled.ScrollView.attrs<IScrollView>({
     contentContainerStyle: {
@@ -35,7 +34,7 @@ export const HalfContainer = styled.ScrollView.attrs<IScrollView>({
         position:absolute;
         bottom: 0;
         right:0;
-        
+
       
 `
 
@@ -77,7 +76,8 @@ export const ButtonContainer = styled.View`
     
     display:flex;
     justify-content:space-around;
-    height: ${RFValue(100)}px;
+    height: ${RFValue(110)}px;
+    justify-content:space-between;
 
 
 `
