@@ -5,7 +5,7 @@ import React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { ActivityIndicator, Provider as PaperProvider } from 'react-native-paper';
 import { SafeAreaView } from 'react-navigation';
-import { SignIn } from './src/pages/SignIn';
+import { SignIn } from './src/modules/auth/views/SignIn';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 
@@ -23,14 +23,14 @@ import {
 KaushanScript_400Regular
 } from "@expo-google-fonts/kaushan-script"
 import { ThemeProvider } from 'styled-components';
-import { theme } from './src/styles/theme';
-import { BottomAuthRoutes } from './src/routes/authRoutes/auth.bottom';
-import { Routes } from './src/routes';
+import { theme } from './src/global/styles/theme';
+import { BottomAuthRoutes } from './src/global/routes/authRoutes/auth.bottom';
+import { Routes } from './src/global/routes';
 import { Provider } from 'react-redux';
-import { store, persistor } from './src/store';
+import { store, persistor } from './src/global/store';
 import { PersistGate } from 'redux-persist/integration/react';
-import { MyThemeProvider } from './src/styles/themeProvider';
-import './src/services/translation/i18n';
+import { MyThemeProvider } from './src/global/styles/themeProvider';
+import './src/global/services/translation/i18n';
 
 export default function App() {
 
