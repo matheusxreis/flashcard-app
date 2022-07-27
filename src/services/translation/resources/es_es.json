@@ -31,6 +31,15 @@
         "backButton":"Paso 1",
         "signUpButton":"Registrarse"
     },
+    "offlineSignInInfo":{
+        "welcome":"Bienvenido,",
+        "details1":"Acabas de iniciar sesión en modo offline.",
+        "details2":"Esto significa que te dieron un nombre de usuario y un avatar aleatorios.",
+        "details3":"La sesión permanecerá activa hasta que cierres sesión en las opciones de configuración.",
+        "details4":"Los mazos se almacenan localmente, es decir, se guardarán en tu dispositivo independientemente del inicio de sesión.",
+        "cancelButton":"Cancelar",
+        "continueButton":"Continuar"
+    },
     "preferences": {
         "theme": {
             "title": "Tema",

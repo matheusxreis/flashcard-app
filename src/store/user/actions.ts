@@ -17,3 +17,9 @@ export function signIn(params: ISignIn){
         }
     }
 }
+
+export function signOut(){
+    return {
+        type: userTypes.signOut
+    }
+}

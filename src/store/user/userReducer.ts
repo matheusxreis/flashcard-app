@@ -8,7 +8,8 @@ import { userTypes } from "./types";
 const initialState = {
     name:"",
     id:"",
-    photo:""
+    photo:"",
+    agreed: false,
 }
 
 export function userReducer(state = initialState, action:AnyAction){
@@ -22,6 +23,9 @@ export function userReducer(state = initialState, action:AnyAction){
             photo: action.payload.photo
         }
         case userTypes.signOut:
-            return initialState
+            return initialState;
+    
+        default:
+            return state;
     }
 }

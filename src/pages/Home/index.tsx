@@ -11,6 +11,7 @@ import { useDimesion } from "../../utils/dimensions"
 
 import {v4 as uuid} from "uuid";
 import { AvatarGenerator } from 'random-avatar-generator';
+import { faker } from "@faker-js/faker"
 
 import * as Component from "./styles"
 import { useDispatch } from "react-redux"
@@ -35,11 +36,14 @@ export function Home(){
         return "motta"+uuid().slice(2,11).replace("-", "x");
     }
 
+    function randomPhoto(){
+        return `../../assets/avatars/${1}.jpg` 
+    }
     function handleOfflineSignIn(){
 
         const name = generateUsername();
         const id = uuid();
-        const photo = new AvatarGenerator().generateRandomAvatar()
+        const photo = '1'
         
 
         console.log(name, id, photo);
@@ -50,6 +54,8 @@ export function Home(){
         }))
 
     }
+
+
 
     const { translation } = useTranslationService();
 

@@ -31,6 +31,15 @@
         "backButton":"Step 1",
         "signUpButton":"Sign Up"
     },
+    "offlineSignInInfo":{
+        "welcome":"Welcome,",
+        "details1":"You have just logged in in offline mode.",
+        "details2":"This means that you were given a random username and avatar.",
+        "details3":"The session will remain active until you log out of the configuration options.",
+        "details4":"Decks are stored locally, that is, they will be saved on your device regardless of login.",
+        "cancelButton":"Cancel",
+        "continueButton":"Continue"
+    },
     "preferences": {
         "theme": {
             "title": "Theme",

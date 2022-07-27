@@ -31,6 +31,15 @@
         "backButton":"Passo 1",
         "signUpButton":"Registrar"
     },
+    "offlineSignInInfo":{
+        "welcome":"Seja bem-vindo,",
+        "details1":"Você acaba de fazer o login no modo offline.",
+        "details2":"Isso significa que um username e avatar aleatórios lhe foram fornecidos. ",
+        "details3":"A sessão continuará ativa até você fazer o log out nas opções de configuração.",
+        "details4":"O armazenamento dos decks é local, ou seja, ficarão salvos no seu dispositivo independente do login.",
+        "cancelButton":"Cancelar",
+        "continueButton":"Continuar"
+    },
     "preferences": {
         "theme": {
             "title": "Tema",

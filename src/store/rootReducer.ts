@@ -1,12 +1,11 @@
 import { AnyAction, combineReducers } from "redux";
 import { themeReducer } from "./theme/themeReducer";
+import { userReducer } from "./user/userReducer";
 
-const initialState = {
-    theme: 1
-}
 
 
 
 export const rootReducer = combineReducers({
-                theme: themeReducer
+                theme: themeReducer,
+                user: userReducer
     })
