@@ -4,10 +4,10 @@ import { Card } from "./Card";
 
 export class Deck {
 
-    id:string;
 
     constructor(
         readonly title: string,
+        readonly id: string,
         readonly authorId: string,
         readonly authorName: string, 
         readonly createdAt: number, 
@@ -15,7 +15,6 @@ export class Deck {
         readonly shared: boolean = false,
     ){
 
-        this.id = v4();
 
     }
 }

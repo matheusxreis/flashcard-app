@@ -29,7 +29,8 @@ export function QRCode({
     const cards = useSelector((x:any)=>x.cards)
     const theme = useTheme();
 
-    function getCards(){        
+    function getCards(){  
+              
         return cards.filter(x=>x.deckId === data.deck.id);
     }
 
@@ -38,12 +39,14 @@ export function QRCode({
 
             const newDeck = new Deck(
                 data.deck.title,
+                data.deck.id,
                 data.deck.authorId,
                 data.deck.authorName,
                 data.deck.createdAt,
                 [],
                 true
             )
+            console.warn("DECK ID", newDeck.id)
             const rightData = {
                 deck: newDeck,
                 cards: getCards()

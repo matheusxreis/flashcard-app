@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Text } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
+import { v4 } from "uuid";
 import { Button } from "../../../../global/components/Button";
 import { Snackbar } from "../../../../global/components/Snackbar";
 import { TextInput } from "../../../../global/components/TextInput";
@@ -23,6 +24,7 @@ export function DeckAdd(){
 
         const newDeck = new Deck(
             deckName, 
+            v4(),
             user.id, 
             user.name, 
             new Date().getTime()

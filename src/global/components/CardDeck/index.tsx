@@ -1,10 +1,11 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { useEffect } from "react";
-import { Provider } from "react-native-paper";
+import { Modal, Provider } from "react-native-paper";
 import { useSelector } from "react-redux";
 import { useTheme } from "styled-components";
 import { Deck } from "../../../modules/decks/entities/Deck";
 import * as Component from "./styles";
+import { Text } from 'react-native'
 
 interface ICardDeck {
     item: Deck;
@@ -26,8 +27,8 @@ export function CardDeck({item, handleDots}: ICardDeck){
     function getAmountCards(){
 
         const amount = cards.filter(x=>x.deckId === item.id).length;
-
-        console.log(cards)
+       //     cards.map(x=>console.log(x.deckId, item))
+     //   console.log(cards.length, "QUANTIDADE DE CARDS")
         return amount
     }
 
@@ -38,7 +39,17 @@ export function CardDeck({item, handleDots}: ICardDeck){
           
 
             <Component.TextContainer>
+
+            <Component.TitleContainer>
                 <Component.Title> {getTitle()} </Component.Title>
+                {item.shared && (
+                    <MaterialCommunityIcons 
+                    name="qrcode"
+                    color={theme.colors.primary}
+                    size={18}
+                    />
+                )}
+            </Component.TitleContainer>
                 <Component.CardAmount> Cards: {getAmountCards()} </Component.CardAmount>
             </Component.TextContainer>
             <Component.DotsContainer
@@ -48,6 +59,7 @@ export function CardDeck({item, handleDots}: ICardDeck){
                 color={theme.colors.textPrimary}
                 size={25}
                 />
+                
             </Component.DotsContainer>
          
 

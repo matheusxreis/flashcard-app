@@ -25,6 +25,13 @@ export function cardsReducer(state=initialState, action:AnyAction){
 
             return [...state, 
             card]
+        case cardTypes.addCards:
+            const { cards } = action.payload;
+            if(cards.length){
+            console.log("cards reducer", state.concat(cards))
+            return state.concat(cards)
+            }
+            return state
         default:
             return state;
     };

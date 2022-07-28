@@ -10,3 +10,13 @@ export function addCard(card: Card){
         }
     }
 }
+
+export function addCards(cards:Card[]){
+
+    return {
+        type: cardTypes.addCards,
+        payload: {
+            cards: cards
+        }
+    }
+}

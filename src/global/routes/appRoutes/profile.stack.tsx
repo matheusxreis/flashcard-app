@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { DeckHome } from "../../../modules/decks/views/DeckHome";
 import { DeckAdd } from "../../../modules/decks/views/DeckAdd";
 import { CardAdd } from "../../../modules/decks/views/CardAdd";
+import { Scanner } from "../../../modules/decks/views/Scanner";
 
 
 const Stack = createStackNavigator()
@@ -55,6 +56,13 @@ export function ProfileStackRoutes(){
             component={CardAdd}
             />
 
+            <Stack.Screen 
+            options={{
+                title: "Scanner"
+            }}
+            name="Scanner"
+            component={Scanner}
+            />  
 
         </Stack.Navigator>
     )

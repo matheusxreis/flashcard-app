@@ -46,6 +46,9 @@ export function DeckHome(){
     function goToAddCard(){
         nav.navigate("CardAdd");
     };
+    function goToScanner(){
+        nav.navigate("Scanner");
+    };
 
     function handleSelectDeck(deck:Deck){
         setSelectedDeck(deck);
@@ -112,7 +115,7 @@ export function DeckHome(){
             actions={[
             {icon: "card-plus", label:translation("deckHome.fab1"), onPress:()=>{goToAddCard()}},
             {icon: "playlist-plus", label: translation("deckHome.fab2"), onPress:()=>{goToAddDeck()}},
-            {icon: "qrcode-scan", label: translation("deckHome.fab3"), onPress:()=>{}}
+            {icon: "qrcode-scan", label: translation("deckHome.fab3"), onPress:()=>{goToScanner()}}
             ]}
             />
     

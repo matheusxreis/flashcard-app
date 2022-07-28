@@ -51,3 +51,9 @@ export const MenuContainer = styled.View`
     border-top:2px solid red;
     z-index:2px;
 `
+
+export const TitleContainer = styled.View`
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+`
