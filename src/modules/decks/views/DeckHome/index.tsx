@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { Text } from "react-native";
+import { Share, Text } from "react-native";
 import { ActivityIndicator, Searchbar } from "react-native-paper";
 import * as Component from "./styles";
 import { FAB, Portal } from "react-native-paper";
@@ -17,6 +17,10 @@ import { getTitle } from "../../../../global/utils/getTitle";
 import { QRCode, QRCodeData } from "../QRCode";
 import { removeDeck } from "../../../../global/store/decks/actions";
 import { removeCards } from "../../../../global/store/cards/actions";
+import { useFileService } from "../../../../global/services/file/useFileService";
+import { Snackbar } from "../../../../global/components/Snackbar";
+import { deckTypes } from "../../../../global/store/decks/decksTypes";
+import { Card } from "../../entities/Card";
 
 type navType = StackNavigationProp<RootStackParamList, "DeckHome">
 
@@ -40,9 +44,13 @@ export function DeckHome(){
 
     const [removeModal, setRemoveModal] = useState<boolean>(false);
 
+    const [snackbarVisible, setSnackbarVisible] = useState<boolean>(false);
+    const [textSnackBar, setTextSnackBar] = useState<string>("");
 
+    const { shareFile } = useFileService();
     const theme = useTheme();
     const decks:Deck[] = useSelector((x:any)=>x.decks);
+    const cards:Card[] = useSelector((x:any)=> x.cards);
 
 
     function goToAddDeck(){
@@ -75,12 +83,41 @@ export function DeckHome(){
     function closeQRCode(){
         setQRLoad(false);
         setQRCodeModal(false);
-    }
+    };
 
     function handleRemoveDeck(){
-        dispatch(removeDeck(selectedDeck.id))
-        dispatch(removeCards(selectedDeck.id))
-    }
+        dispatch(removeDeck(selectedDeck.id));
+        dispatch(removeCards(selectedDeck.id));
+        setTextSnackBar("Deck removido com sucesso.")
+        setSnackbarVisible(true);
+    };
+
+    function getCardsFromDeck(deckId:string){
+        return cards.filter(x=>x.deckId === deckId);
+    };
+    async function handleShareDeck(){
+
+        const saveData = {
+            deck: selectedDeck,
+            cards: getCardsFromDeck(selectedDeck.id)
+        }
+    
+
+      const deckSaved =  await shareFile({
+            deckname: selectedDeck.title,
+            userId: selectedDeck.authorId,
+            content: JSON.stringify(saveData),
+        })
+
+        if(deckSaved){
+            setTextSnackBar("O deck foi exportado com sucesso.")
+            setSnackbarVisible(true);
+        }else {
+            setTextSnackBar("Alguma coisa deu errado")
+            setSnackbarVisible(true);
+        }
+    };
+
     useEffect(()=>{
             setFilterDeck(decks);
     }, [decks]);
@@ -138,8 +175,8 @@ export function DeckHome(){
                 <Component.MenuTitle> {getTitle(selectedDeck.title)} </Component.MenuTitle>
                 <Component.DeckId> id: {selectedDeck.id} </Component.DeckId>
 
-                <Component.MenuItem>
-                        <Component.MenuIcon size={24} name="share" />
+                <Component.MenuItem onPress={()=>handleShareDeck()}>
+                        <Component.MenuIcon size={24} name="download" />
                         <Component.MenuItemText> {translation("deckHome.modalCard.share")} </Component.MenuItemText>
                 </Component.MenuItem>
                 <Component.MenuItem onPress={()=>openQRCode()}>
@@ -193,6 +230,17 @@ export function DeckHome(){
                 </Component.RemoveButtonContainer> 
            </Component.RemoveModalContent>
        </Modal>
+
+
+       {/* SNACKBAR */}
+
+        <Component.SnackContainer>
+            <Snackbar
+            visible={snackbarVisible}
+            text={textSnackBar}
+            onDismiss={()=>{setSnackbarVisible(false)}}
+            />
+        </Component.SnackContainer>
         </Component.Container>
     )
 }

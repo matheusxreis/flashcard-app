@@ -46,7 +46,7 @@
         "fab2": "Adicionar deck",
         "fab3": "Scannear deck",
         "modalCard": {
-            "share":"Compartilhar",
+            "share":"Exportar",
             "qr":"Gerar QR Code",
             "remove": "Remover Deck"
         }

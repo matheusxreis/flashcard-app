@@ -46,7 +46,7 @@
         "fab2": "Add deck",
         "fab3": "Scan deck",
         "modalCard": {
-            "share":"Share",
+            "share":"Export",
             "qr":"Generate QR Code",
             "remove": "Remove Deck"
         }

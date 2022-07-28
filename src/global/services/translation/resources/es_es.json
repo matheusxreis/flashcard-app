@@ -46,7 +46,7 @@
         "fab2": "Agregar mazo",
         "fab3": "Escanear mazo",
         "modalCard": {
-            "share":"Cuota",
+            "share":"Exportar",
             "qr":"Generar QR Code",
             "remove": "Borrar Mazo"
         }
