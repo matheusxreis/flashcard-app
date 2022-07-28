@@ -25,11 +25,11 @@ const swamp = {
     name:"swamp",
     colors: {
         primary: "#5C7FC1",
-        backgroundPrimary:"#212930",
+        backgroundPrimary:"#171D22",
         backgroundSecondary: "#212930",
         textPrimary:"#ffffff",
         textSecondary: "#5C7FC1",
-        textTertiary: "#F2F2F2",
+        textTertiary: "#B0ADAD",
     },
 
     fonts: {
