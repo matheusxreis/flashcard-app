@@ -10,18 +10,21 @@ import { useNavigation } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../../../../global/RootStackParamList";
 import { Deck } from "../../entities/Deck";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { CardDeck } from "../../../../global/components/CardDeck";
 import { Modal } from "../../../../global/components/Modal";
 import { getTitle } from "../../../../global/utils/getTitle";
 import { QRCode, QRCodeData } from "../QRCode";
+import { removeDeck } from "../../../../global/store/decks/actions";
+import { removeCards } from "../../../../global/store/cards/actions";
 
 type navType = StackNavigationProp<RootStackParamList, "DeckHome">
 
 export function DeckHome(){
 
     const { translation } = useTranslationService();
-    const nav = useNavigation<navType>()
+    const nav = useNavigation<navType>();
+    const dispatch = useDispatch();
 
     const [searchValue, setSearchValue] = useState<string>("");
     const [openFAB, setOpenFAB] = useState<boolean>(false);
@@ -34,6 +37,8 @@ export function DeckHome(){
     const [qrCodeModal, setQRCodeModal] = useState<boolean>(false);
     const [qrCodeData, setQRCodeData] = useState<QRCodeData>({} as QRCodeData);
     const [qrLoad, setQRLoad] = useState<boolean>(false);
+
+    const [removeModal, setRemoveModal] = useState<boolean>(false);
 
 
     const theme = useTheme();
@@ -72,6 +77,10 @@ export function DeckHome(){
         setQRCodeModal(false);
     }
 
+    function handleRemoveDeck(){
+        dispatch(removeDeck(selectedDeck.id))
+        dispatch(removeCards(selectedDeck.id))
+    }
     useEffect(()=>{
             setFilterDeck(decks);
     }, [decks]);
@@ -144,12 +153,14 @@ export function DeckHome(){
                         }
                          </Component.MenuItemText>
                 </Component.MenuItem>
-                <Component.MenuItem>
+                <Component.MenuItem onPress={()=>setRemoveModal(true)}>
                         <Component.MenuIcon size={24} name="delete" />
                         <Component.MenuItemText> {translation("deckHome.modalCard.remove")} </Component.MenuItemText>
                 </Component.MenuItem>
 
             </Component.MenuContainer>
+
+            {/* QR MODAL */}
        </Modal>
         <Modal
         isOpen={qrCodeModal}
@@ -158,6 +169,29 @@ export function DeckHome(){
             <QRCode
             data={qrCodeData}
             />
+       </Modal>
+
+       {/* REMOVE MODAL */}
+
+       <Modal 
+       isOpen={removeModal}
+       handleClose={()=>{setRemoveModal(false)}}
+       >
+           <Component.RemoveModalContent>
+               <Component.RemoveModalTitle>
+                   Excluir o deck {selectedDeck.title}?
+               </Component.RemoveModalTitle>
+                <Component.RemoveButtonContainer>
+                     <Component.RemoveButtonConfirm 
+                        onPress={()=>{setRemoveModal(false)}}
+                        secondary
+                        title="Cancelar"/>
+                        <Component.RemoveButtonConfirm 
+                        secondary
+                        onPress={()=>{handleRemoveDeck(); setRemoveModal(false); setOpenModalOptions(false)}}
+                        title="Confirmar"/>
+                </Component.RemoveButtonContainer> 
+           </Component.RemoveModalContent>
        </Modal>
         </Component.Container>
     )
