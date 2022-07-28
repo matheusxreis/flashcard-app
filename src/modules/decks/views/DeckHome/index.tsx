@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Text } from "react-native";
-import { Searchbar } from "react-native-paper";
+import { ActivityIndicator, Searchbar } from "react-native-paper";
 import * as Component from "./styles";
 import { FAB, Portal } from "react-native-paper";
 import { useTheme } from "styled-components";
@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import { CardDeck } from "../../../../global/components/CardDeck";
 import { Modal } from "../../../../global/components/Modal";
 import { getTitle } from "../../../../global/utils/getTitle";
+import { QRCode, QRCodeData } from "../QRCode";
 
 type navType = StackNavigationProp<RootStackParamList, "DeckHome">
 
@@ -27,6 +28,13 @@ export function DeckHome(){
     const [filterDeck, setFilterDeck] = useState<Deck[]>([]);
     const [openModalOptions, setOpenModalOptions] = useState<boolean>(false);
     const [selectedDeck, setSelectedDeck] = useState<Deck>({} as Deck)
+
+
+
+    const [qrCodeModal, setQRCodeModal] = useState<boolean>(false);
+    const [qrCodeData, setQRCodeData] = useState<QRCodeData>({} as QRCodeData);
+    const [qrLoad, setQRLoad] = useState<boolean>(false);
+
 
     const theme = useTheme();
     const decks:Deck[] = useSelector((x:any)=>x.decks);
@@ -44,6 +52,23 @@ export function DeckHome(){
         setOpenModalOptions(true);
     };
 
+    function openQRCode(){
+        setQRLoad(true);
+        
+        setQRCodeModal(true);
+        setQRCodeData({
+            deck: selectedDeck
+        });
+
+        //setQRLoad(false);
+
+    };
+
+    function closeQRCode(){
+        setQRLoad(false);
+        setQRCodeModal(false);
+    }
+
     useEffect(()=>{
             setFilterDeck(decks);
     }, [decks]);
@@ -55,6 +80,8 @@ export function DeckHome(){
 
     }, [searchValue]);
 
+    useEffect(()=>{ console.log("aaaaaaaa", qrCodeModal)  }, [qrCodeModal])
+    
     
 
     return (
@@ -89,6 +116,7 @@ export function DeckHome(){
             ]}
             />
     
+    {/* OPTIONS MODAL */}
        
        <Modal
        isOpen={openModalOptions}
@@ -102,9 +130,16 @@ export function DeckHome(){
                         <Component.MenuIcon size={24} name="share" />
                         <Component.MenuItemText> {translation("deckHome.modalCard.share")} </Component.MenuItemText>
                 </Component.MenuItem>
-                <Component.MenuItem>
+                <Component.MenuItem onPress={()=>openQRCode()}>
                         <Component.MenuIcon size={24} name="qrcode" />
-                        <Component.MenuItemText> {translation("deckHome.modalCard.qr")} </Component.MenuItemText>
+                        <Component.MenuItemText> 
+                            {
+                            qrLoad ?                             
+                            <ActivityIndicator color={useTheme().colors.primary} />
+                            :
+                            translation("deckHome.modalCard.qr")
+                        }
+                         </Component.MenuItemText>
                 </Component.MenuItem>
                 <Component.MenuItem>
                         <Component.MenuIcon size={24} name="delete" />
@@ -112,6 +147,14 @@ export function DeckHome(){
                 </Component.MenuItem>
 
             </Component.MenuContainer>
+       </Modal>
+        <Modal
+        isOpen={qrCodeModal}
+        handleClose={() => {closeQRCode()}}
+        >
+            <QRCode
+            data={qrCodeData}
+            />
        </Modal>
         </Component.Container>
     )

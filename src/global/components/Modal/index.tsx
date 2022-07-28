@@ -17,7 +17,7 @@ export function Modal({isOpen, handleClose, children}: IMenuProps){
             alignItems:"center"
         }}
         visible={isOpen}
-        onDismiss={handleClose}>
+        onDismiss={()=>handleClose()}>
 
             {children}
            

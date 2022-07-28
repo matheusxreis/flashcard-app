@@ -21,7 +21,7 @@ export function BottomAppRoutes(){
     const cards = useSelector((x:any)=>x.cards);
 
     function notifications(){
-        return cards.filter(x=>x.seen === false).length
+        return cards.filter(x=>x.seen === false).length || false
     }
 
 

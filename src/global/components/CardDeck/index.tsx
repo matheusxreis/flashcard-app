@@ -27,6 +27,7 @@ export function CardDeck({item, handleDots}: ICardDeck){
 
         const amount = cards.filter(x=>x.deckId === item.id).length;
 
+        console.log(cards)
         return amount
     }
 
