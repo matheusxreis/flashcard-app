@@ -100,11 +100,15 @@ export function DeckHome(){
 
                 <Component.MenuItem>
                         <Component.MenuIcon size={24} name="share" />
-                        <Component.MenuItemText> Compartilhar </Component.MenuItemText>
+                        <Component.MenuItemText> {translation("deckHome.modalCard.share")} </Component.MenuItemText>
                 </Component.MenuItem>
                 <Component.MenuItem>
                         <Component.MenuIcon size={24} name="qrcode" />
-                        <Component.MenuItemText> Gerar QR Code </Component.MenuItemText>
+                        <Component.MenuItemText> {translation("deckHome.modalCard.qr")} </Component.MenuItemText>
+                </Component.MenuItem>
+                <Component.MenuItem>
+                        <Component.MenuIcon size={24} name="delete" />
+                        <Component.MenuItemText> {translation("deckHome.modalCard.remove")} </Component.MenuItemText>
                 </Component.MenuItem>
 
             </Component.MenuContainer>

@@ -44,7 +44,30 @@
         "searchInputPlaceholder":"Busca en tu mazo",
         "fab1": "Agregar tarjeta",
         "fab2": "Agregar mazo",
-        "fab3": "Escanear mazo"
+        "fab3": "Escanear mazo",
+        "modalCard": {
+            "share":"Cuota",
+            "qr":"Generar QR Code",
+            "remove": "Borrar Mazo"
+        }
+    },
+    "deckAdd":{
+        "title":"Añadir un mazo.",
+        "subtitle":"Los mazos agregados aquí irán automáticamente a la página principal.",
+        "deckNameInputLabel": "Elige un nombre para el mazo:",
+        "deckNameInputPlaceholder":"Nombre del mazo",
+        "addButton": "Agregar",
+        "success": "¡Fué un éxito!"
+    },
+    "cardAdd":{
+        "title": "Agrega una carta a tu mazo.",
+        "selectLabel":"Seleccionar mazo:",
+        "defaultValueSelect": "Ningún mazo seleccionado",
+        "frontCardInputLabel":"Anverso de la tarjeta:",
+        "frontCardInputPlaceholder": "Agregar el anverso de la tarjeta",
+        "backCardInputLabel":"Reverso de la tarjeta:",
+        "backCardInputPlaceholder": "Añadir dorso de tarjeta",
+        "addButton": "Agregar"
     },
     "preferences": {
         "theme": {
@@ -67,7 +90,8 @@
         "settings":"Ajustes",
         "signIn":"Iniciar Sesión",
         "signUp":"Regístrate",
-        "addDeck":"Agregar Mazo"
+        "addDeck":"Agregar Mazo",
+        "addCard": "Agregar Tarjeta"
 
     }
 }

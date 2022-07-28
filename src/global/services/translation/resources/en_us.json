@@ -44,7 +44,30 @@
         "searchInputPlaceholder":"Search your deck",
         "fab1": "Add card",
         "fab2": "Add deck",
-        "fab3": "Scan deck"
+        "fab3": "Scan deck",
+        "modalCard": {
+            "share":"Share",
+            "qr":"Generate QR Code",
+            "remove": "Remove Deck"
+        }
+    },
+    "deckAdd":{
+        "title":"Add a deck.",
+        "subtitle":"Decks added here will automatically go to the main page.",
+        "deckNameInputLabel": "Choose a name for the deck:",
+        "deckNameInputPlaceholder":"Deck's name",
+        "addButton": "Add",
+        "success": "Deck added!"
+    },
+    "cardAdd":{
+        "title": "Add a card to your deck.",
+        "selectLabel":"Select Deck:",
+        "defaultValueSelect": "No deck selected",
+        "frontCardInputLabel":"Front of card:",
+        "frontCardInputPlaceholder": "Add front of the card",
+        "backCardInputLabel":"Back of card:",
+        "backCardInputPlaceholder": "Add back of the card",
+        "addButton": "Add"
     },
     "preferences": {
         "theme": {
@@ -68,6 +91,7 @@
         "settings":"Settings",
         "signIn":"Sign In",
         "signUp":"Sign Up",
-        "addDeck":"Add Deck"
+        "addDeck":"Add Deck",
+        "addCard": "Add Card"
     }
 }

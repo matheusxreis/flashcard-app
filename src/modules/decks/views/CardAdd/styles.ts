@@ -42,6 +42,7 @@ export const ModalContentContainer = styled.View`
     background: ${({theme})=>theme.colors.backgroundSecondary};
     border-radius: ${RFValue(6)}px;
     padding: ${RFValue(10)}px 0px;
+    width:100%;
 
 `
 

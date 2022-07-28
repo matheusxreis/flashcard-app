@@ -7,6 +7,7 @@ import { Modal } from "../../../../global/components/Modal";
 import { RadioCard } from "../../../../global/components/RadioCard";
 import { Select } from "../../../../global/components/Select";
 import { TextInput } from "../../../../global/components/TextInput";
+import { useTranslationService } from "../../../../global/services/translation/useTranslationService";
 import { addCard } from "../../../../global/store/cards/actions";
 import { getTitle } from "../../../../global/utils/getTitle";
 import { Card } from "../../entities/Card";
@@ -27,13 +28,14 @@ export function CardAdd(){
 
     const decks = useSelector((x:any)=>x.decks);
     const dispatch = useDispatch();
+    const { translation } = useTranslationService();
 
 
     function selectValue(){
         if(selectedDeck.title){
             return getTitle(selectedDeck.title)
         }
-        return "Nenhum deck selecionado."
+        return translation("cardAdd.defaultValueSelect")
     }
 
     function handleAddCard(){
@@ -59,26 +61,26 @@ export function CardAdd(){
     return (
         <Component.Container>
         
-        <Component.Title>Adicione um card ao seu deck.</Component.Title>
+        <Component.Title>{translation("cardAdd.title")}</Component.Title>
 
         <Component.Form>
-            <Component.Label> Selecione o deck: </Component.Label>
+            <Component.Label> {translation("cardAdd.selectLabel")} </Component.Label>
             <Select
             onPress={()=>{setModalDecks(true)}}
             value={selectValue()}
             />  
 
-            <Component.Label> Frente do card: </Component.Label>
+            <Component.Label>{translation("cardAdd.frontCardInputLabel")}</Component.Label>
             <TextInput 
             value={frontCard}
             onChangeText={setFrontCard}
-            placeholder="Adicione a frente do card"
+            placeholder={translation("cardAdd.frontCardInputPlaceholder")}
             />
-            <Component.Label> Verso do card: </Component.Label>
+            <Component.Label>{translation("cardAdd.backCardInputLabel")}</Component.Label>
              <TextInput 
             value={backCard}
             onChangeText={setBackCard}
-            placeholder="Adicione o verso do card"
+            placeholder={translation("cardAdd.backCardInputPlaceholder")}
             />
 
 
@@ -87,14 +89,14 @@ export function CardAdd(){
             <Button
             disable={isButtonDisable}
             onPress={()=>handleAddCard()}
-            title="Adicionar"/>
+            title={translation("cardAdd.addButton")}/>
         </Component.ButtonContainer>
 
         <Modal
         handleClose={()=>{setModalDecks(false)}}
         isOpen={modalDecks}>
             <Component.ModalContentContainer>
-            <Component.ModalTitle> Selecione o deck: </Component.ModalTitle>
+            <Component.ModalTitle> {translation("cardAdd.selectLabel")} </Component.ModalTitle>
             <Component.PreferencesList
                 ItemSeparatorComponent={()=><Divider />}
                 data={decks}

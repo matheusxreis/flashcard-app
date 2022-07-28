@@ -49,7 +49,7 @@ export function ProfileStackRoutes(){
 
             <Stack.Screen
             options={{
-                title: "Adicionar Card"
+                title: translation("screens.addCard")
             }}
             name="CardAdd"
             component={CardAdd}

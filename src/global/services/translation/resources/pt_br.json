@@ -44,7 +44,30 @@
         "searchInputPlaceholder":"Pesquise seu deck",
         "fab1": "Adicionar card",
         "fab2": "Adicionar deck",
-        "fab3": "Scannear deck"
+        "fab3": "Scannear deck",
+        "modalCard": {
+            "share":"Compartilhar",
+            "qr":"Gerar QR Code",
+            "remove": "Remover Deck"
+        }
+    },
+    "deckAdd":{
+        "title":"Adicione um deck.",
+        "subtitle":"Os decks adicionados aqui, irão automaticamente para a página principal.",
+        "deckNameInputLabel": "Escolha um nome para o deck",
+        "deckNameInputPlaceholder":"Nome do deck",
+        "addButton": "Adicionar",
+        "success": "Deck adicionado!"
+    },
+    "cardAdd":{
+        "title": "Adicione um card ao seu deck.",
+        "selectLabel":"Selecione o deck:",   
+        "defaultValueSelect": "Nenhum deck selecionado", 
+        "frontCardInputLabel":"Frente do card:", 
+        "frontCardInputPlaceholder": "Adicione a frente do card", 
+        "backCardInputLabel":"Verso do card:",               
+        "backCardInputPlaceholder": "Adicione o verso do card", 
+        "addButton": "Adicionar"
     },
     "preferences": {
         "theme": {
@@ -67,6 +90,7 @@
         "settings":"Configurações",
         "signIn":"Entrar",
         "signUp":"Registrar",
-        "addDeck":"Adicionar Deck"
+        "addDeck":"Adicionar Deck",
+        "addCard": "Adicionar Card"
     }
 }

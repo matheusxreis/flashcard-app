@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button } from "../../../../global/components/Button";
 import { Snackbar } from "../../../../global/components/Snackbar";
 import { TextInput } from "../../../../global/components/TextInput";
+import { useTranslationService } from "../../../../global/services/translation/useTranslationService";
 import { addDeck } from "../../../../global/store/decks/actions";
 import { Deck } from "../../entities/Deck";
 import * as Component from "./styles";
@@ -15,6 +16,8 @@ export function DeckAdd(){
     const dispatch = useDispatch();
     const [deckName, setDeckName] = useState<string>("");
     const [snackVisible, setSnackVisible] = useState<boolean>(false);
+
+    const { translation } = useTranslationService();
 
     function addNewDeck(){
 
@@ -37,13 +40,13 @@ export function DeckAdd(){
 
     return (
         <Component.Container>
-            <Component.Title>Adicione seu deck. </Component.Title>
-            <Component.SubTitle>Os decks adicionados aqui, irão automaticamente para a página principal. </Component.SubTitle>
+            <Component.Title>{translation("deckAdd.title")} </Component.Title>
+            <Component.SubTitle>{translation("deckAdd.subtitle")} </Component.SubTitle>
         
             <Component.Form>
-                <Component.Label> Escolha um nome para o deck: </Component.Label>
+                <Component.Label>{translation("deckAdd.deckNameInputLabel")} </Component.Label>
                 <TextInput
-                placeholder="Nome do deck"
+                placeholder={translation("deckAdd.deckNameInputPlaceholder")}
                 onChangeText={setDeckName}
                 value={deckName}
                 />
@@ -53,7 +56,7 @@ export function DeckAdd(){
                 disable={deckName.length<=0}
                 onPress={()=>addNewDeck()}
                 icon="playlist-plus"
-                title="Adicionar"
+                title={translation("deckAdd.addButton")}
                 />
             </Component.ButtonContainer>
 
@@ -61,7 +64,7 @@ export function DeckAdd(){
                 <Snackbar
                 onDismiss={()=>setSnackVisible(false)}
                 visible={snackVisible}
-                text={`Deck adicionado!`}
+                text={translation("deckAdd.success")}
                 />
             </Component.SnackContainer>
         </Component.Container>

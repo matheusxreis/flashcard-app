@@ -39,7 +39,7 @@ export const DeckList = styled.FlatList`
 export const MenuContainer = styled.View`
 
     width: ${RFValue(250)}px;
-    height: ${RFValue(160)}px;
+    height: ${RFValue(220)}px;
     background: ${({theme})=>theme.colors.backgroundSecondary};
     border-radius: ${RFValue(5)}px;
     padding: ${RFValue(10)}px;
