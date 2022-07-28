@@ -49,6 +49,13 @@ export function CardDeck({item, handleDots}: ICardDeck){
                     size={18}
                     />
                 )}
+                {item.imported && (
+                    <MaterialCommunityIcons 
+                    name="download"
+                    color={theme.colors.primary}
+                    size={18}
+                    />
+                )}
             </Component.TitleContainer>
                 <Component.CardAmount> Cards: {getAmountCards()} </Component.CardAmount>
             </Component.TextContainer>

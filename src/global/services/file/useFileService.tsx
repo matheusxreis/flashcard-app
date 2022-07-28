@@ -1,10 +1,11 @@
 import React from "react";
 
-import * as Share from "expo-sharing"
-
 import * as File from "expo-file-system";
-
 import * as Media from "expo-media-library";
+import * as DocumentPicker from 'expo-document-picker';
+import { stringify } from "uuid";
+import { Card } from "../../../modules/decks/entities/Card";
+import { Deck } from "../../../modules/decks/entities/Deck";
 
 
 interface IShareFile {
@@ -13,17 +14,24 @@ interface IShareFile {
     content: string;
 };
 
+interface DocPicked {
+    mimeType: string,
+    name: string,
+    size: number,
+    type: string,
+    uri: string,
+}
+
+
+interface GetFileReturn {
+    deck:Deck;
+    cards:Card[]
+}
 export function useFileService(){
 
-    const extension = ".deck"
 
 
-    async function makeDirectory(directoryName:string, uri:string){
-        console.log("assets", uri)
-            await Media.requestPermissionsAsync();
-            const a =  await Media.createAssetAsync(uri)
-            await Media.createAlbumAsync(directoryName, a)
-    }
+   
 
     async function makeFile(filename:string, content:string){
 
@@ -48,7 +56,42 @@ export function useFileService(){
 
     }
 
-    function getFile(){}
+
+     function verifyIfIsADeckFile(content:string){
+
+        try{
+        const obj = JSON.parse(content);
+
+        if(obj?.deck){
+            return true;
+        }else {
+            return false
+        }
+        }catch{
+            return false;
+        }
+    }
+
+    async function getFile():Promise<GetFileReturn|null>{
+
+       const doc  = await DocumentPicker.getDocumentAsync();
+
+       if(doc.type==="success"){
+           const content = await File.readAsStringAsync(doc.uri);
+       
+           if(verifyIfIsADeckFile(content)){
+            return JSON.parse(content) as GetFileReturn
+           }
+
+            return null
+
+
+            
+           
+       }
+       
+        
+    }
 
     async function shareFile(params: IShareFile){
 

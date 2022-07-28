@@ -13,6 +13,7 @@ export class Deck {
         readonly createdAt: number, 
         public cards: Card[] = [],
         readonly shared: boolean = false,
+        readonly imported: boolean = false
     ){
 
 

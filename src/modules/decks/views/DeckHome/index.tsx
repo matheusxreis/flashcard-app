@@ -21,117 +21,43 @@ import { useFileService } from "../../../../global/services/file/useFileService"
 import { Snackbar } from "../../../../global/components/Snackbar";
 import { deckTypes } from "../../../../global/store/decks/decksTypes";
 import { Card } from "../../entities/Card";
+import { useDeckHome } from "./useDeckHome";
 
 type navType = StackNavigationProp<RootStackParamList, "DeckHome">
 
 export function DeckHome(){
 
-    const { translation } = useTranslationService();
-    const nav = useNavigation<navType>();
-    const dispatch = useDispatch();
-
-    const [searchValue, setSearchValue] = useState<string>("");
-    const [openFAB, setOpenFAB] = useState<boolean>(false);
-    const [filterDeck, setFilterDeck] = useState<Deck[]>([]);
-    const [openModalOptions, setOpenModalOptions] = useState<boolean>(false);
-    const [selectedDeck, setSelectedDeck] = useState<Deck>({} as Deck)
-
-
-
-    const [qrCodeModal, setQRCodeModal] = useState<boolean>(false);
-    const [qrCodeData, setQRCodeData] = useState<QRCodeData>({} as QRCodeData);
-    const [qrLoad, setQRLoad] = useState<boolean>(false);
-
-    const [removeModal, setRemoveModal] = useState<boolean>(false);
-
-    const [snackbarVisible, setSnackbarVisible] = useState<boolean>(false);
-    const [textSnackBar, setTextSnackBar] = useState<string>("");
-
-    const { shareFile } = useFileService();
-    const theme = useTheme();
-    const decks:Deck[] = useSelector((x:any)=>x.decks);
-    const cards:Card[] = useSelector((x:any)=> x.cards);
-
-
-    function goToAddDeck(){
-        nav.navigate("DeckAdd");
-    };
-    function goToAddCard(){
-        nav.navigate("CardAdd");
-    };
-    function goToScanner(){
-        nav.navigate("Scanner");
-    };
-
-    function handleSelectDeck(deck:Deck){
-        setSelectedDeck(deck);
-        setOpenModalOptions(true);
-    };
-
-    function openQRCode(){
-        setQRLoad(true);
+    const  {
+        translation,
+        searchValue, setSearchValue,
+        openFAB, setOpenFAB,
+        filterDeck, 
+        openModalOptions, setOpenModalOptions,
+        selectedDeck, 
+        qrCodeModal, 
+        qrCodeData,  
+        qrLoad, 
+        removeModal, setRemoveModal, 
+        snackbarVisible, setSnackbarVisible,
+        textSnackBar, 
+        theme, 
         
-        setQRCodeModal(true);
-        setQRCodeData({
-            deck: selectedDeck
-        });
+        goToAddDeck,
+        goToAddCard,
+        goToScanner,
 
-        //setQRLoad(false);
+        handleSelectDeck,
+        
+        openQRCode, 
+        closeQRCode, 
 
-    };
+        handleRemoveDeck, 
+        
+        
+        handleShareDeck,
 
-    function closeQRCode(){
-        setQRLoad(false);
-        setQRCodeModal(false);
-    };
-
-    function handleRemoveDeck(){
-        dispatch(removeDeck(selectedDeck.id));
-        dispatch(removeCards(selectedDeck.id));
-        setTextSnackBar("Deck removido com sucesso.")
-        setSnackbarVisible(true);
-    };
-
-    function getCardsFromDeck(deckId:string){
-        return cards.filter(x=>x.deckId === deckId);
-    };
-    async function handleShareDeck(){
-
-        const saveData = {
-            deck: selectedDeck,
-            cards: getCardsFromDeck(selectedDeck.id)
-        }
-    
-
-      const deckSaved =  await shareFile({
-            deckname: selectedDeck.title,
-            userId: selectedDeck.authorId,
-            content: JSON.stringify(saveData),
-        })
-
-        if(deckSaved){
-            setTextSnackBar("O deck foi exportado com sucesso.")
-            setSnackbarVisible(true);
-        }else {
-            setTextSnackBar("Alguma coisa deu errado")
-            setSnackbarVisible(true);
-        }
-    };
-
-    useEffect(()=>{
-            setFilterDeck(decks);
-    }, [decks]);
-
-    useEffect(()=>{
-
-        const a = decks?.filter( x=> x?.title.slice(0, searchValue.length).toUpperCase() === searchValue.toUpperCase());
-        setFilterDeck(a);
-
-    }, [searchValue]);
-
-    useEffect(()=>{ console.log("aaaaaaaa", qrCodeModal)  }, [qrCodeModal])
-    
-    
+        handleImportDeck
+    } = useDeckHome();
 
     return (
         <Component.Container>  
@@ -159,6 +85,7 @@ export function DeckHome(){
             fabStyle={{backgroundColor: theme.colors.primary}}
             open={openFAB}
             actions={[
+            {icon: "upload", label:"Importar deck", onPress:()=>{handleImportDeck()}},
             {icon: "card-plus", label:translation("deckHome.fab1"), onPress:()=>{goToAddCard()}},
             {icon: "playlist-plus", label: translation("deckHome.fab2"), onPress:()=>{goToAddDeck()}},
             {icon: "qrcode-scan", label: translation("deckHome.fab3"), onPress:()=>{goToScanner()}}
@@ -199,7 +126,9 @@ export function DeckHome(){
 
             {/* QR MODAL */}
        </Modal>
-        <Modal
+       
+       {/* QR MODAL */}
+       <Modal
         isOpen={qrCodeModal}
         handleClose={() => {closeQRCode()}}
         >
