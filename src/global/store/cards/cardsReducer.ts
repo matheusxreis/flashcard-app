@@ -32,6 +32,10 @@ export function cardsReducer(state=initialState, action:AnyAction){
             return state.concat(cards)
             }
             return state
+        case cardTypes.removeCards:
+            const { deckId } = action.payload;
+
+            return state.filter(x=>x.deckId!==deckId);
         default:
             return state;
     };

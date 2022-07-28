@@ -20,6 +20,9 @@ export function decksReducer(state=initialState, action:AnyAction){
                 ...state, 
                 deck
             ]
+        case deckTypes.removeDeck:
+            const { deckId } = action.payload;
+            return state.filter(x=>x.id !== deckId);
        
         default:
             return state;

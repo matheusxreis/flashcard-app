@@ -20,3 +20,11 @@ export function addCards(cards:Card[]){
         }
     }
 }
+
+
+export function removeCards(deckId: string){
+    return {
+        type: cardTypes.removeCards,
+        payload: { deckId: deckId }
+    }
+}

@@ -15,3 +15,12 @@ export function addDeck(deck: Deck){
     }
 }
 
+
+export function removeDeck(deckId: string){
+
+    return {
+        type: deckTypes.removeDeck,
+        payload: { deckId: deckId }
+    }
+}
+
