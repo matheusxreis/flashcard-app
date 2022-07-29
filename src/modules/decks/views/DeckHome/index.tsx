@@ -45,6 +45,7 @@ export function DeckHome(){
         goToAddDeck,
         goToAddCard,
         goToScanner,
+        goToPlay,
 
         handleSelectDeck,
         
@@ -75,6 +76,7 @@ export function DeckHome(){
         <Component.DeckList
         data={filterDeck}
         renderItem={({item})=><CardDeck 
+                                    handleGo={()=>goToPlay(item.id)}
                                     handleDots={()=>handleSelectDeck(item)}
                                     item={item} />}/>
         

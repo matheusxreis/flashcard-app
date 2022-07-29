@@ -9,6 +9,9 @@ const plains = {
         textPrimary:"#3D4E5D",
         textSecondary: "#397AF9",
         textTertiary: "#c8c8c8",
+        success:"#439560",
+        error: "#AE2222",
+        ok: "#3951BF"
     },
 
     fonts: {
@@ -30,6 +33,9 @@ const swamp = {
         textPrimary:"#ffffff",
         textSecondary: "#5C7FC1",
         textTertiary: "#B0ADAD",
+        success:"#253624",
+        error: "#602626",
+        ok: "#3F476C"
     },
 
     fonts: {
@@ -51,6 +57,9 @@ const mountain = {
         textPrimary:"#3D4E5D",
         textSecondary: "#FA6E42",
         textTertiary: "#E69C84",
+        success:"#439560",
+        error: "#AE2222",
+        ok: "#3951BF"
     },
 
     fonts: {
@@ -72,6 +81,9 @@ const florest = {
         textPrimary:"#3D4E5D",
         textSecondary: "#3F703E",
         textTertiary: "#7FB97E",
+        success:"#439560",
+        error: "#AE2222",
+        ok: "#3951BF"
     },
 
     fonts: {
@@ -93,6 +105,9 @@ const island = {
         textPrimary:"#3D4E5D",
         textSecondary: "#3EA4AA",
         textTertiary: "#9EE4E8",
+        success:"#439560",
+        error: "#AE2222",
+        ok: "#3951BF"
     },
 
     fonts: {

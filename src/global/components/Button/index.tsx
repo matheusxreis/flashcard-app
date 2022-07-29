@@ -4,6 +4,7 @@ import { Button as B } from 'react-native-paper';
 import { useTheme } from "styled-components";
 import { Text } from "react-native"
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { theme } from "../../styles/theme";
 
 interface IButton extends ButtonProps {
     onPress:()=>void;
@@ -11,9 +12,10 @@ interface IButton extends ButtonProps {
     secondary?: boolean;
     disable?:boolean;
     icon?:string;
+    colorText?: string;
 }
 
-export function Button({title, onPress, icon, secondary = false, disable = false, ...rest}:IButton){
+export function Button({title, onPress, icon, secondary = false, disable = false, colorText, ...rest}:IButton){
 
     const theme = useTheme(); 
     function getButtonMode(){
@@ -40,7 +42,7 @@ export function Button({title, onPress, icon, secondary = false, disable = false
                  color={"#fff"}
                  size={20}
                  name={icon||""}/>
-                <Text style={{color: "#FFF"}}> {title} </Text>
+                <Text style={{color: colorText}}> {title} </Text>
                 </>   
              ):(
                  <>
@@ -48,7 +50,7 @@ export function Button({title, onPress, icon, secondary = false, disable = false
                  color={theme.colors.primary}
                  size={20}
                  name={icon||""}/>
-             <Text> {title} </Text>  
+             <Text style={{color: colorText}}> {title} </Text>  
              </>)}
             </B>
     )

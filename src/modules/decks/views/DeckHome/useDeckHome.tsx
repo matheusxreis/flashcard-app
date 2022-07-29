@@ -64,6 +64,11 @@ export function useDeckHome(){
     function goToScanner(){
         nav.navigate("Scanner");
     };
+    function goToPlay(deckId: string){
+        
+
+        nav.navigate("DeckPlay", { deckId })
+    }
 
     function handleSelectDeck(deck:Deck){
         setSelectedDeck(deck);
@@ -184,7 +189,8 @@ export function useDeckHome(){
         goToAddDeck,
         goToAddCard,
         goToScanner,
-
+        goToPlay,
+        
         handleSelectDeck,
         
         openQRCode, 

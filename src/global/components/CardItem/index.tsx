@@ -7,6 +7,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 interface IRadioCardProps {
     title:string;
     onPress:()=>void;
+    
 };
 
 export function CardItem({title, onPress}: IRadioCardProps){

@@ -7,5 +7,6 @@ export type RootStackParamList = {
     DeckAdd:null,
     CardAdd:null,
     Scanner:null,
+    DeckPlay: { deckId: string }
     
 }

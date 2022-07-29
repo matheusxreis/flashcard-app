@@ -10,9 +10,10 @@ import { Text } from 'react-native'
 interface ICardDeck {
     item: Deck;
     handleDots:()=>void;
+    handleGo:()=>void;
 }
 
-export function CardDeck({item, handleDots}: ICardDeck){
+export function CardDeck({item, handleDots, handleGo}: ICardDeck){
 
     const theme = useTheme();
     const cards = useSelector((x:any)=>x.cards);
@@ -34,7 +35,7 @@ export function CardDeck({item, handleDots}: ICardDeck){
 
 
     return (
-        <Component.Container>
+        <Component.Container onPress={()=>handleGo()}>
 
           
 
