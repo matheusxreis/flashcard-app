@@ -127,7 +127,7 @@ export const DifficultLevelButtonContainer = styled.View`
     margin-top:auto;
     width: ${RFValue(315)}px;
     padding: ${RFValue(15)}px;
-    justify-content:space-between;
+    justify-content:space-around;
 
 `
 
@@ -135,3 +135,12 @@ export const LevelButton = styled(DifficultButton)`
    
     
 `
+
+export const CountContainer = styled.View`
+
+    width:100%;
+    padding: ${RFValue(2)}px;
+
+`
+
+

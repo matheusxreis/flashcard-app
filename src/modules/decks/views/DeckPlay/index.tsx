@@ -34,6 +34,13 @@ export function DeckPlay(){
     const [flip, setFlip] = useState<boolean>(false);
     const [actualCard, setActualCard] = useState<number>(0);
     const [emptyAnswer, setEmptyAnswer] = useState<boolean>(false);
+
+    const [okCards, setOkCards] = useState<Card[]>([]);
+    const [hardCards, setHardCards] = useState<Card[]>([]);
+    const [easyCards, setEasyCards] = useState<Card[]>([]);
+    const [repeatCards, setRepeatCards] = useState<Card[]>([]);
+
+    const [timePlay, setTimePlay] = useState<number>(1);
     
     const dispatch = useDispatch();
 
@@ -108,11 +115,45 @@ export function DeckPlay(){
         goToHome();
     }
 
+    function repeatGame(){
+
+
+        if(timePlay === 1){
+        setDeckCards(repeatCards);
+        setActualCard(0); 
+        setTimePlay(2);
+        handleFlipCard();
+        setEmptyAnswer(false);
+
+        console.log("TIME 2")
+        }
+        else if(timePlay === 2) {
+        setDeckCards(hardCards);
+        setActualCard(0); 
+        setTimePlay(3);
+        handleFlipCard();
+        setEmptyAnswer(false);
+        console.log("TIME 3")
+
+        }
+        else if (timePlay === 3) {
+       // setActualCard(0); 
+        setRepeatCards([]);
+        decideActualCard();
+        handleFlipCard();
+        console.log("TIME 3")
+
+        
+        }
+    }
+
+    
     function decideActualCard(){
-        setEmptyAnswer(true)
+        setEmptyAnswer(true);
         
         if(actualCard+1>deckCards.length-1){
             //
+           // if(repeatCards.length) { repeatGame(); return; }
             setEmptyAnswer(false)
             setActualCard(actualCard);
             playFinished();
@@ -136,16 +177,57 @@ export function DeckPlay(){
     }
 
     function easy(){
+
+        const actual = deckCards[actualCard];
+        setEasyCards([...easyCards, actual]);
+
+
         wasSeen();
         decideActualCard();
     };
 
     function hard(){
+
+        const actual = deckCards[actualCard]
+
+        //const hasAtLeast3 = hardCards.filter(x=>x.id === actual.id);
+
+        // if(hasAtLeast3.length<4){
+        //  setHardCards([...hardCards, actual]);
+
+        //  setRepeatCards([...repeatCards, actual]);
+        // }
+
+        const hasAtLeast3 = deckCards.filter(x=>x.id === actual.id);
+
+        setDeckCards([...deckCards, actual]);
+        if(hasAtLeast3.length<3){
+        }
+
         wasSeen();
         decideActualCard();
+
+
     };
 
     function ok(){
+
+             
+        const actual = deckCards[actualCard]
+        const hasAtLeast3 = okCards.filter(x=>x.id === actual.id);
+
+        if(hasAtLeast3.length<2){
+         setOkCards([...okCards, actual]);
+
+         setRepeatCards([...repeatCards, actual]);
+
+        }
+
+        setOkCards([...okCards, actual]);
+
+
+        setDeckCards([...deckCards, actual])
+
         wasSeen();
         decideActualCard();
     };
@@ -158,10 +240,19 @@ export function DeckPlay(){
         getFormattedDate();
     }, [deck, cards])
 
+    useEffect(()=>{
+        console.log(repeatCards.length)
+    }, [repeatCards])
 
     return (
         <Component.Container>
-
+            {play && (
+            <Component.CountContainer>
+              <Component.LabelCard> Restam: {deckCards.length - easyCards.length} </Component.LabelCard>
+              <Component.LabelCard> Difícil: {hardCards.length} </Component.LabelCard>
+              <Component.LabelCard> Ok: {okCards.length} </Component.LabelCard>
+            </Component.CountContainer>
+            )}
             {play === false ? (
             <Component.DeckContainer>
              <Component.DeckName> {deck.title} </Component.DeckName>
@@ -192,6 +283,7 @@ export function DeckPlay(){
                 flipVertical={true}
                 flip={flip}>
                 <Component.CardContainer>
+                    
                     <Component.PlayingContainer>
                     <Component.LabelCard> Frente:</Component.LabelCard>
                     <Component.QuestionAnswer>{deckCards[actualCard]?.question}</Component.QuestionAnswer>
@@ -216,11 +308,7 @@ export function DeckPlay(){
                         title="Fácil"
                         onPress={()=>{easy()}}
                         />
-                        <Component.LevelButton
-                        difficult="ok"
-                        title="Ok"
-                        onPress={()=>{ok()}}
-                        />
+                       
                         <Component.LevelButton
                         difficult="hard"
                         title="Difícil"
