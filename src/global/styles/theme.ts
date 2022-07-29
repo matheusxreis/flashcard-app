@@ -33,9 +33,9 @@ const swamp = {
         textPrimary:"#ffffff",
         textSecondary: "#5C7FC1",
         textTertiary: "#B0ADAD",
-        success:"#253624",
-        error: "#602626",
-        ok: "#3F476C"
+        success:"#439560",
+        error: "#AE2222",
+        ok: "#3951BF"
     },
 
     fonts: {

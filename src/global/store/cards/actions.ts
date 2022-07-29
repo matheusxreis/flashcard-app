@@ -28,3 +28,12 @@ export function removeCards(deckId: string){
         payload: { deckId: deckId }
     }
 }
+
+
+export function cardWasSeen(cardId:string){
+
+    return {
+        type: cardTypes.cardWasSeen,
+        payload: { cardId: cardId }
+    }
+}

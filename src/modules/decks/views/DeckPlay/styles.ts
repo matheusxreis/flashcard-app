@@ -2,6 +2,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 import styled from "styled-components/native";
 import FlipCard from "react-native-flip-card";
 import { Button } from "../../../../global/components/Button";
+import { DifficultButton } from "../../../../global/components/DifficultButton";
 
 
 interface DifficultLevel {
@@ -124,13 +125,13 @@ export const DifficultLevelButtonContainer = styled.View`
     display:flex;
     flex-direction:row;
     margin-top:auto;
-    width: ${RFValue(290)}px;
+    width: ${RFValue(315)}px;
     padding: ${RFValue(15)}px;
     justify-content:space-between;
 
 `
 
-export const LevelButton = styled(Button)`
+export const LevelButton = styled(DifficultButton)`
    
     
 `

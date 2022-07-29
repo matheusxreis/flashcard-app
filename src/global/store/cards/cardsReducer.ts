@@ -36,6 +36,16 @@ export function cardsReducer(state=initialState, action:AnyAction){
             const { deckId } = action.payload;
 
             return state.filter(x=>x.deckId!==deckId);
+
+        case cardTypes.cardWasSeen:
+            const { cardId } = action.payload;
+
+            return [...state.map(x=>{
+                if(x.id === cardId){
+                  return {...x, seen: true }
+                };
+                return x;
+            })]
         default:
             return state;
     };

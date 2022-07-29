@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Text } from "react-native";
 import { Divider } from "react-native-paper";
 import { useDispatch, useSelector } from "react-redux";
+import { v4 } from "uuid";
 import { Button } from "../../../../global/components/Button";
 import { Modal } from "../../../../global/components/Modal";
 import { RadioCard } from "../../../../global/components/RadioCard";
@@ -40,7 +41,7 @@ export function CardAdd(){
 
     function handleAddCard(){
 
-        const newCard = new Card(frontCard, backCard, selectedDeck.id);
+        const newCard = new Card(frontCard, backCard, selectedDeck.id, v4());
         dispatch(addCard(newCard));
 
         setFrontCard("");

@@ -3,7 +3,7 @@ import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import React, { useEffect, useState } from "react";
 import { Alert, Text } from "react-native";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "../../../../global/components/Button";
 import { RootStackParamList } from "../../../../global/RootStackParamList";
 import { Card } from "../../entities/Card";
@@ -13,6 +13,7 @@ import FlipCard from "react-native-flip-card";
 import * as Component from "./styles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
+import { cardWasSeen } from "../../../../global/store/cards/actions";
 
 
 type navType = StackNavigationProp<RootStackParamList, "DeckPlay">
@@ -34,6 +35,7 @@ export function DeckPlay(){
     const [actualCard, setActualCard] = useState<number>(0);
     const [emptyAnswer, setEmptyAnswer] = useState<boolean>(false);
     
+    const dispatch = useDispatch();
 
     function getCards(){
         return cards.filter(x=>x.deckId === deckId); 
@@ -129,16 +131,22 @@ export function DeckPlay(){
 
     };
 
+    function wasSeen(){
+        dispatch(cardWasSeen(deckCards[actualCard].id))
+    }
 
     function easy(){
+        wasSeen();
         decideActualCard();
     };
 
     function hard(){
+        wasSeen();
         decideActualCard();
     };
 
     function ok(){
+        wasSeen();
         decideActualCard();
     };
 
@@ -204,18 +212,17 @@ export function DeckPlay(){
                     </Component.PlayingContainer>
                     <Component.DifficultLevelButtonContainer>
                         <Component.LevelButton
-                        secondary
+                        difficult="easy"
                         title="Fácil"
                         onPress={()=>{easy()}}
                         />
                         <Component.LevelButton
-                        secondary
+                        difficult="ok"
                         title="Ok"
                         onPress={()=>{ok()}}
                         />
                         <Component.LevelButton
-                        secondary
-                        textColor={useTheme().colors.error}
+                        difficult="hard"
                         title="Difícil"
                         onPress={()=>{hard()}}
                         />

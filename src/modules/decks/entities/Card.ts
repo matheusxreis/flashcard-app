@@ -10,10 +10,14 @@ type levels = "easy" | "ok" | "hard"
             readonly question: string,
             readonly answer: string,
             readonly deckId: string, 
-            readonly id = v4(),
+            readonly id:string,
             public level:levels = "easy"
         ){
             this.seen = false;
+        }
+
+         alterSeen(){
+            this.seen = true;
         }
 
     }
