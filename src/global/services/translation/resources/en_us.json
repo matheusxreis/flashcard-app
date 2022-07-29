@@ -45,6 +45,7 @@
         "fab1": "Add card",
         "fab2": "Add deck",
         "fab3": "Scan deck",
+        "fab4": "Import deck",
         "modalCard": {
             "share":"Export",
             "qr":"Generate QR Code",

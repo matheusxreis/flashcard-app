@@ -45,6 +45,7 @@
         "fab1": "Agregar tarjeta",
         "fab2": "Agregar mazo",
         "fab3": "Escanear mazo",
+        "fab4": "Importar mazo",
         "modalCard": {
             "share":"Exportar",
             "qr":"Generar QR Code",

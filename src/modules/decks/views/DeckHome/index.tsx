@@ -85,7 +85,7 @@ export function DeckHome(){
             fabStyle={{backgroundColor: theme.colors.primary}}
             open={openFAB}
             actions={[
-            {icon: "upload", label:"Importar deck", onPress:()=>{handleImportDeck()}},
+            {icon: "upload", label:translation("deckHome.fab4"), onPress:()=>{handleImportDeck()}},
             {icon: "card-plus", label:translation("deckHome.fab1"), onPress:()=>{goToAddCard()}},
             {icon: "playlist-plus", label: translation("deckHome.fab2"), onPress:()=>{goToAddDeck()}},
             {icon: "qrcode-scan", label: translation("deckHome.fab3"), onPress:()=>{goToScanner()}}

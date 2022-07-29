@@ -40,11 +40,17 @@ export function Scanner(){
 
      function handleScan(data:string){
       //  console.log("data", data);
+      setCamKey(camKey+1);
       if(data){
+
+        try{
         const sharedDeck:ScanQRData = JSON.parse(data);
 
-        sharedDeck.deck.id ?  success(sharedDeck)  : error()
-        setCamKey(camKey+1);
+        if(sharedDeck.deck.id){ success(sharedDeck) }
+        else{ error() }
+        }catch(err){
+          error()
+        }
 
       }
     }
@@ -60,6 +66,8 @@ export function Scanner(){
     }
     function error(){
         setSharedError(true);
+       
+
     }
     async function getPermission(){
       const { status } = await Camera?.requestCameraPermissionsAsync();
@@ -68,11 +76,11 @@ export function Scanner(){
 
 
     useEffect(() => {
-        getPermission()
-
+        getPermission();
+        setCamKey(camKey+1);
       }, []);
 
-      useFocusEffect(useCallback(()=>{setCamKey(camKey+1)},[]))
+      useFocusEffect(useCallback(()=>{setCamKey(camKey+2)},[]))
      
   
 
@@ -86,14 +94,14 @@ export function Scanner(){
             key={camKey}
             
             onMountError={(e)=>console.log(e)}
-            onBarCodeScanned={ (qr)=> {if(sharedSuccess==false){handleScan(qr?.data)}}}
+            onBarCodeScanned={ (qr)=> {setCamKey(camKey+1);if(sharedSuccess==false){handleScan(qr?.data)}}}
             >
              
 
                     <Mask    
-                    edgeRadius={9}
+                    edgeRadius={15}
                     edgeColor={theme.colors.primary}
-                    edgeBorderWidth={7}
+                    edgeBorderWidth={10}
                     outerMaskOpacity={0}
                     showAnimatedLine={false}/>
                 
