@@ -60,11 +60,14 @@ When into app, the first screen is the home, which contains a list of user's dec
     <img src="./img-app/home1.jpeg" width="200" />
     <img src="./img-app/home2.jpeg" width="200" />
 </div>
+
 Here is where the user can generate a qr code or export his deck to share with friend or for himself storage. 
+
 <div style="display:flex">
      <img src="./img-app/home3.jpeg" width="200" />
     <img src="./img-app/home4.jpeg" width="200" />
 </div>
+
 ### Cards:
 
 The screen where the user can remove, edit and see all his cards in app. 
@@ -81,6 +84,7 @@ The user can see his flashcards through this screens.
         <img src="./img-app/deckplay2.jpeg" width="200" />
         <img src="./img-app/deckplay3.jpeg" width="200" />
 </div>
+
 ### Settings:
 
 How the name says: the settings screen. The user can control the theme, the language and the session here.
