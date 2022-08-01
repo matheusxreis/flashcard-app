@@ -66,6 +66,11 @@ export function DeckAdd(){
                 <Snackbar
                 onDismiss={()=>setSnackVisible(false)}
                 visible={snackVisible}
+                undo={{
+                    is:true,
+                    label:translation("advices.snackbar.gotit"),
+                    onPress: ()=>setSnackVisible(false)
+                }}
                 text={translation("deckAdd.success")}
                 />
             </Component.SnackContainer>

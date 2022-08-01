@@ -68,7 +68,8 @@
         "frontCardInputPlaceholder": "Agregar el anverso de la tarjeta",
         "backCardInputLabel":"Reverso de la tarjeta:",
         "backCardInputPlaceholder": "Añadir dorso de tarjeta",
-        "addButton": "Agregar"
+        "addButton": "Agregar",
+        "success": "¡Fué un éxito!"
     },
     "preferences": {
         "theme": {
@@ -94,5 +95,10 @@
         "addDeck":"Agregar Mazo",
         "addCard": "Agregar Tarjeta"
 
+    },
+    "advices": {
+        "snackbar": {
+            "gotit": "Entendí!"
+        }
     }
 }

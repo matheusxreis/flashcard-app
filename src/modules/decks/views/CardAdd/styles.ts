@@ -63,3 +63,10 @@ export const ButtonContainer = styled.View`
     justify-content:flex-end;
     padding: ${RFValue(20)}px 0px;
 `
+
+export const SnackContainer = styled.View`
+
+    width:100%;
+    align-items:center;
+    margin-top:auto;
+`

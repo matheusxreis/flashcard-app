@@ -68,7 +68,8 @@
         "frontCardInputPlaceholder": "Adicione a frente do card", 
         "backCardInputLabel":"Verso do card:",               
         "backCardInputPlaceholder": "Adicione o verso do card", 
-        "addButton": "Adicionar"
+        "addButton": "Adicionar",
+        "success": "Card adicionado!"
     },
     "preferences": {
         "theme": {
@@ -93,5 +94,10 @@
         "signUp":"Registrar",
         "addDeck":"Adicionar Deck",
         "addCard": "Adicionar Card"
+    },
+    "advices": {
+        "snackbar": {
+            "gotit": "Entendi!"
+        }
     }
 }

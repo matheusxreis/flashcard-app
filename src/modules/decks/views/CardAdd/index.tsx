@@ -7,6 +7,7 @@ import { Button } from "../../../../global/components/Button";
 import { Modal } from "../../../../global/components/Modal";
 import { RadioCard } from "../../../../global/components/RadioCard";
 import { Select } from "../../../../global/components/Select";
+import { Snackbar } from "../../../../global/components/Snackbar";
 import { TextInput } from "../../../../global/components/TextInput";
 import { useTranslationService } from "../../../../global/services/translation/useTranslationService";
 import { addCard } from "../../../../global/store/cards/actions";
@@ -26,6 +27,7 @@ export function CardAdd(){
     const [backCard, setBackCard] = useState<string>("");
 
     const [isButtonDisable, setIsButtonDisable] = useState<boolean>(true);
+    const [snackVisible, setSnackVisible]  = useState<boolean>();
 
     const decks = useSelector((x:any)=>x.decks);
     const dispatch = useDispatch();
@@ -47,6 +49,8 @@ export function CardAdd(){
         setFrontCard("");
         setBackCard("");
         setSelectedDeck({} as Deck);
+
+        setSnackVisible(true);
     }
 
     useEffect(()=>{
@@ -110,6 +114,19 @@ export function CardAdd(){
             </Component.ModalContentContainer>
 
         </Modal>
+
+        <Component.SnackContainer>
+                <Snackbar
+                onDismiss={()=>setSnackVisible(false)}
+                visible={snackVisible}
+                undo={{
+                    is:true,
+                    label:translation("advices.snackbar.gotit"),
+                    onPress: ()=>setSnackVisible(false)
+                }}
+                text={translation("cardAdd.success")}
+                />
+        </Component.SnackContainer>
         </Component.Container>
     )
 }
