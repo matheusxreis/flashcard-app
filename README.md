@@ -49,7 +49,8 @@ To run the app, you must follow the next steps:
 
 The ideia is that there is two options to sign in: for who has a account and for who has not. 
 
-![auth-screen](./img-app/auth1.jpeg =x250)
+
+<img src="./img-app/auth1.jpeg" width="200" />
 
 ### Home:
 
