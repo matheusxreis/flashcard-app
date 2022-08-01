@@ -56,14 +56,15 @@ The ideia is that there is two options to sign in: for who has a account and for
 
 When into app, the first screen is the home, which contains a list of user's deck and some options to him.
 
-![home1](./img-app/home1.jpeg)
-![home2](./img-app/home2.jpeg)
-
+<div style="display:flex">
+    <img src="./img-app/home1.jpeg" width="200" />
+    <img src="./img-app/home2.jpeg" width="200" />
+</div>
 Here is where the user can generate a qr code or export his deck to share with friend or for himself storage. 
-
-![home3](./img-app/home3.jpeg)
-![home4](./img-app/home4.jpeg)
-
+<div style="display:flex">
+     <img src="./img-app/home3.jpeg" width="200" />
+    <img src="./img-app/home4.jpeg" width="200" />
+</div>
 ### Cards:
 
 The screen where the user can remove, edit and see all his cards in app. 
@@ -75,15 +76,16 @@ The screen where the user can remove, edit and see all his cards in app.
 This is the screen where the app's main objective happens. The game occurs here. 
 The user can see his flashcards through this screens.
 
-![deckplay1.jpeg](./img-app/deckplay1.jpeg)
-![deckplay2.jpeg](./img-app/deckplay1.jpeg)
-![deckplay3.jpeg](./img-app/deckplay1.jpeg)
-
+<div style="display:flex">
+        <img src="./img-app/deckplay1.jpeg" width="200" />
+        <img src="./img-app/deckplay2.jpeg" width="200" />
+        <img src="./img-app/deckplay3.jpeg" width="200" />
+</div>
 ### Settings:
 
 How the name says: the settings screen. The user can control the theme, the language and the session here.
 
-![settings.jpeg](./img-app/settings.jpeg)
+<img src="./img-app/settings.jpeg" width="200" />
 
  I really had fun coding this application and I'm happy with the result. Obviously has so much to improve and I'll trying to do better when I realize that it needs. It is under development, but what is not? A good software never stop to be developed. 
 
