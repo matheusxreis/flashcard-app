@@ -16,6 +16,17 @@ export function decksReducer(state=initialState, action:AnyAction){
         
         case deckTypes.addDeck:
             const { deck } = action.payload;
+
+            const nameAlreadyExist = state.filter(x=>x.title.slice(0, deck.title.length) === deck.title );
+
+            if(nameAlreadyExist.length){
+                console.log(
+                    nameAlreadyExist,
+                    deck.title.slice(0, nameAlreadyExist[0].title.length+1)
+                )
+                deck.title = deck.title+`(${nameAlreadyExist.length})`;
+            }
+
             return [
                 ...state, 
                 deck

@@ -6,7 +6,7 @@ export class Deck {
 
 
     constructor(
-        readonly title: string,
+        public title: string,
         readonly id: string,
         readonly authorId: string,
         readonly authorName: string, 

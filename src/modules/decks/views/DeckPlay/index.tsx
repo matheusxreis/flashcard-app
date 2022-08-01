@@ -152,8 +152,7 @@ export function DeckPlay(){
         setEmptyAnswer(true);
         
         if(actualCard+1>deckCards.length-1){
-            //
-           // if(repeatCards.length) { repeatGame(); return; }
+         
             setEmptyAnswer(false)
             setActualCard(actualCard);
             playFinished();
@@ -167,8 +166,6 @@ export function DeckPlay(){
         setTimeout(()=>{
             setEmptyAnswer(false);
         }, 1000)
-
-
 
     };
 
@@ -189,48 +186,12 @@ export function DeckPlay(){
     function hard(){
 
         const actual = deckCards[actualCard]
-
-        //const hasAtLeast3 = hardCards.filter(x=>x.id === actual.id);
-
-        // if(hasAtLeast3.length<4){
-        //  setHardCards([...hardCards, actual]);
-
-        //  setRepeatCards([...repeatCards, actual]);
-        // }
-
-        const hasAtLeast3 = deckCards.filter(x=>x.id === actual.id);
-
-        setDeckCards([...deckCards, actual]);
-        if(hasAtLeast3.length<3){
-        }
-
-        wasSeen();
-        decideActualCard();
-
-
-    };
-
-    function ok(){
-
-             
-        const actual = deckCards[actualCard]
-        const hasAtLeast3 = okCards.filter(x=>x.id === actual.id);
-
-        if(hasAtLeast3.length<2){
-         setOkCards([...okCards, actual]);
-
-         setRepeatCards([...repeatCards, actual]);
-
-        }
-
-        setOkCards([...okCards, actual]);
-
-
         setDeckCards([...deckCards, actual])
-
         wasSeen();
         decideActualCard();
     };
+
+  
 
     useEffect(()=>{
         getDeckInfo();
@@ -248,7 +209,7 @@ export function DeckPlay(){
         <Component.Container>
             {play && (
             <Component.CountContainer>
-              <Component.LabelCard> Restam: {deckCards.length - easyCards.length} </Component.LabelCard>
+              <Component.LabelCard> Restam: {deckCards.length - actualCard} </Component.LabelCard>
               <Component.LabelCard> Difícil: {hardCards.length} </Component.LabelCard>
               <Component.LabelCard> Ok: {okCards.length} </Component.LabelCard>
             </Component.CountContainer>
