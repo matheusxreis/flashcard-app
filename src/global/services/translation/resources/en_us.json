@@ -71,6 +71,20 @@
         "addButton": "Add",
         "success": "Card added!"
     },
+    "deckPlay":{
+        "left": "Left:",
+        "author":"Author:",
+        "createdAt": "Created at:",
+        "cards": "Cards:",
+        "newCards": "New cards:",
+        "front":"Front",
+        "back":"Back",
+        "difficult":{
+            "easy":"Easy",
+            "hard":"Hard"
+        }
+
+    },
     "preferences": {
         "theme": {
             "title": "Theme",
@@ -90,6 +104,7 @@
     },
     "screens": {    
         "home":"Home",
+        "cards": "Cards",
         "settings":"Settings",
         "signIn":"Sign In",
         "signUp":"Sign Up",

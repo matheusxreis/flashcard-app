@@ -71,6 +71,20 @@
         "addButton": "Adicionar",
         "success": "Card adicionado!"
     },
+    "deckPlay":{
+        "left": "Restam:",
+        "author":"Autor:",
+        "createdAt": "Data de criação:",
+        "cards": "Cards:",
+        "newCards": "Novos cards:",
+        "front":"Frente",
+        "back":"Costas",
+        "difficult":{
+            "easy":"Fácil",
+            "hard":"Difícil"
+        }
+
+    },
     "preferences": {
         "theme": {
             "title": "Tema",
@@ -89,11 +103,13 @@
     },
     "screens": {    
         "home":"Início",
+        "cards": "Cards",
         "settings":"Configurações",
         "signIn":"Entrar",
         "signUp":"Registrar",
         "addDeck":"Adicionar Deck",
         "addCard": "Adicionar Card"
+ 
     },
     "advices": {
         "snackbar": {

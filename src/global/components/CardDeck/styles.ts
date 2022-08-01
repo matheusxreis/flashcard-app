@@ -40,6 +40,12 @@ export const TextContainer = styled.View``
 export const DotsContainer = styled.TouchableOpacity`
     width: ${RFValue(50)}px;
     align-items:flex-end;
+    
+`
+export const BadgeContainer = styled.View`
+
+    align-items: flex-start;
+    justify-content:flex-start;
 `
 
 export const MenuContainer = styled.View`

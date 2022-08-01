@@ -9,6 +9,7 @@ import { ConfigStackRoutes } from "../authRoutes/config.stack.tsx";
 import { useTranslationService } from "../../services/translation/useTranslationService";
 import { ProfileStackRoutes } from "./profile.stack";
 import { useSelector } from "react-redux";
+import { CardStackRoutes } from "./cards.stack";
 
 
 const Bottom = createMaterialBottomTabNavigator();
@@ -54,6 +55,21 @@ export function BottomAppRoutes(){
                       />
                 )
             }}/>
+
+            <Bottom.Screen
+            
+            name={"List"}
+            component={CardStackRoutes}
+            options={{
+                title:translation("screens.cards"),
+                tabBarIcon: ({color})=>(
+                      <MaterialCommunityIcons
+                      name="cards"
+                      color={color}
+                      size={26}
+                      />
+                )}}
+            />
 
             <Bottom.Screen 
             name={"Settings"}

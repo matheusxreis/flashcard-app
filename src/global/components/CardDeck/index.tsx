@@ -1,11 +1,12 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { useEffect } from "react";
-import { Modal, Provider } from "react-native-paper";
+import { Badge, Modal, Provider } from "react-native-paper";
 import { useSelector } from "react-redux";
 import { useTheme } from "styled-components";
 import { Deck } from "../../../modules/decks/entities/Deck";
 import * as Component from "./styles";
 import { Text } from 'react-native'
+import { Card } from "../../../modules/decks/entities/Card";
 
 interface ICardDeck {
     item: Deck;
@@ -33,6 +34,13 @@ export function CardDeck({item, handleDots, handleGo}: ICardDeck){
         return amount
     }
 
+    function getNewCards(){
+        const cardsFromDeck:Card[] = cards.filter(x=>x.deckId === item.id);
+        const notSeen = cardsFromDeck.filter(x=>x.seen===false).length;
+
+        return notSeen;
+    }
+
 
     return (
         <Component.Container onPress={()=>handleGo()}>
@@ -43,6 +51,8 @@ export function CardDeck({item, handleDots, handleGo}: ICardDeck){
 
             <Component.TitleContainer>
                 <Component.Title> {getTitle()} </Component.Title>
+                
+                
                 {item.shared && (
                     <MaterialCommunityIcons 
                     name="qrcode"
@@ -57,11 +67,25 @@ export function CardDeck({item, handleDots, handleGo}: ICardDeck){
                     size={18}
                     />
                 )}
+                {getNewCards()>0 && (
+                    <Component.BadgeContainer>
+                        <Badge 
+                        style={{justifyContent: 'center'}}
+                        size={14}
+                        >
+                            {getNewCards()}
+                        </Badge>
+                    </Component.BadgeContainer>
+                    )}
+
+                
             </Component.TitleContainer>
                 <Component.CardAmount> Cards: {getAmountCards()} </Component.CardAmount>
             </Component.TextContainer>
+          
             <Component.DotsContainer
             onPress={handleDots}>
+              
                 <MaterialCommunityIcons
                 name="dots-vertical"
                 color={theme.colors.textPrimary}

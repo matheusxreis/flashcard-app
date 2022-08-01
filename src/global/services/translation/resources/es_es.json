@@ -70,6 +70,20 @@
         "backCardInputPlaceholder": "Añadir dorso de tarjeta",
         "addButton": "Agregar",
         "success": "¡Fué un éxito!"
+    },   
+     "deckPlay":{
+        "left": "Restante:",
+        "author":"Autor:",
+        "createdAt": "Creado en:",
+        "cards": "Cartas:",
+        "newCards": "Nuevas cartas:",
+        "front":"Frente",
+        "back":"Atras",
+        "difficult":{
+            "easy":"Fácil",
+            "hard":"Duro"
+        }
+
     },
     "preferences": {
         "theme": {
@@ -89,6 +103,7 @@
     },
     "screens": {    
         "home":"Inicio",
+        "cards": "Cartas",
         "settings":"Ajustes",
         "signIn":"Iniciar Sesión",
         "signUp":"Regístrate",

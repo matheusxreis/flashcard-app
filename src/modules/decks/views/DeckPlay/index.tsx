@@ -14,6 +14,7 @@ import * as Component from "./styles";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 import { cardWasSeen } from "../../../../global/store/cards/actions";
+import { useTranslationService } from "../../../../global/services/translation/useTranslationService";
 
 
 type navType = StackNavigationProp<RootStackParamList, "DeckPlay">
@@ -43,6 +44,7 @@ export function DeckPlay(){
     const [timePlay, setTimePlay] = useState<number>(1);
     
     const dispatch = useDispatch();
+    const { translation } = useTranslationService();
 
     function getCards(){
         return cards.filter(x=>x.deckId === deckId); 
@@ -209,28 +211,27 @@ export function DeckPlay(){
         <Component.Container>
             {play && (
             <Component.CountContainer>
-              <Component.LabelCard> Restam: {deckCards.length - actualCard} </Component.LabelCard>
-              <Component.LabelCard> Difícil: {hardCards.length} </Component.LabelCard>
-              <Component.LabelCard> Ok: {okCards.length} </Component.LabelCard>
+              <Component.LabelCard> {translation("deckPlay.left") + String(deckCards.length - actualCard)} </Component.LabelCard>
+             
             </Component.CountContainer>
             )}
             {play === false ? (
             <Component.DeckContainer>
              <Component.DeckName> {deck.title} </Component.DeckName>
              <Component.DeckDataContainer>
-                <Component.DeckInfo> Autor: </Component.DeckInfo>
+                <Component.DeckInfo> {translation("deckPlay.author")} </Component.DeckInfo>
                 <Component.DeckData>  {deck.authorName} </Component.DeckData>
              </Component.DeckDataContainer>
              <Component.DeckDataContainer>
-                <Component.DeckInfo> Data de criação: </Component.DeckInfo>
+                <Component.DeckInfo> {translation("deckPlay.createdAt")} </Component.DeckInfo>
                 <Component.DeckData>  { formattedDate } </Component.DeckData>
              </Component.DeckDataContainer>
              <Component.DeckDataContainer>
-                <Component.DeckInfo> Cards: </Component.DeckInfo>
+                <Component.DeckInfo> {translation("deckPlay.cards")} </Component.DeckInfo>
                 <Component.DeckData>  {deckCards.length} </Component.DeckData>
              </Component.DeckDataContainer>
              <Component.DeckDataContainer>
-                <Component.DeckInfo> Novos cards: </Component.DeckInfo>
+                <Component.DeckInfo> {translation("deckPlay.newCards")} </Component.DeckInfo>
                 <Component.DeckData>  {getnNotSeenCards()} </Component.DeckData>
              </Component.DeckDataContainer>
              <Component.PlayButtonContainer>
@@ -246,7 +247,7 @@ export function DeckPlay(){
                 <Component.CardContainer>
                     
                     <Component.PlayingContainer>
-                    <Component.LabelCard> Frente:</Component.LabelCard>
+                    <Component.LabelCard> {translation("deckPlay.front")} </Component.LabelCard>
                     <Component.QuestionAnswer>{deckCards[actualCard]?.question}</Component.QuestionAnswer>
                     </Component.PlayingContainer>
                     <Component.FlipIconContainer>
@@ -260,19 +261,19 @@ export function DeckPlay(){
                 </Component.CardContainer>
                 <Component.CardContainer>
                     <Component.PlayingContainer>
-                    <Component.LabelCard> Costas:</Component.LabelCard>
+                    <Component.LabelCard> {translation("deckPlay.back")} </Component.LabelCard>
                     <Component.QuestionAnswer>{emptyAnswer ? "" : deckCards[actualCard]?.answer}</Component.QuestionAnswer>
                     </Component.PlayingContainer>
                     <Component.DifficultLevelButtonContainer>
                         <Component.LevelButton
                         difficult="easy"
-                        title="Fácil"
+                        title={translation("deckPlay.difficult.easy")}
                         onPress={()=>{easy()}}
                         />
                        
                         <Component.LevelButton
                         difficult="hard"
-                        title="Difícil"
+                        title={translation("deckPlay.difficult.hard")}
                         onPress={()=>{hard()}}
                         />
                     </Component.DifficultLevelButtonContainer>
