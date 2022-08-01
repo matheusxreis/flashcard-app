@@ -107,7 +107,7 @@ export const CardContainer = styled.View`
 
     border-radius: ${RFValue(5)}px;
     width: ${RFValue(300)}px;
-    height: ${RFValue(300)}px;
+    min-height: ${RFValue(300)}px;
     background: ${({theme})=>theme.colors.backgroundSecondary};
     padding: ${RFValue(50)}px;
     align-items:center;
