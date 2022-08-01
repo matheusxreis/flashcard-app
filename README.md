@@ -69,7 +69,7 @@ Here is where the user can generate a qr code or export his deck to share with f
 
 The screen where the user can remove, edit and see all his cards in app. 
 
-![cards](./img-app/cards1.jpeg)
+<img src="./img-app/cards1.jpeg" width="200" />
 
 ### Play:
 
