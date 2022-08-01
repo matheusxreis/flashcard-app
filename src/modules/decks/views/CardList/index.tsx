@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useTheme } from "styled-components";
 import { Modal } from "../../../../global/components/Modal";
 import { Snackbar } from "../../../../global/components/Snackbar";
+import { useTranslationService } from "../../../../global/services/translation/useTranslationService";
 import { removeCard } from "../../../../global/store/cards/actions";
 import { getTitle } from "../../../../global/utils/getTitle";
 import { Card } from "../../entities/Card";
@@ -21,6 +22,7 @@ export function CardList(){
     const decks:Deck[] = useSelector((x:any)=>x.decks);
     const theme = useTheme();
     const dispatch = useDispatch();
+    const { translation } = useTranslationService();
 
     const [modalCard, setModalCard] = useState<boolean>(false);
     const [selectedCard, setSelectedCard] = useState<Card>({} as Card);
@@ -48,17 +50,17 @@ export function CardList(){
         <Component.Container>
 
             <Component.TableContentText>
-               Clique no card para alterar:
+               {translation("cardList.clickOnCard")}
             </Component.TableContentText>
             <Component.TableHeader>
                 <Component.TableHeaderItem>
                     <Component.TableHeaderText>
-                        Frente: 
+                    {translation("cardList.front")}
                     </Component.TableHeaderText>
                 </Component.TableHeaderItem>
                 <Component.TableHeaderItem>
                     <Component.TableHeaderText>
-                        Costas: 
+                    {translation("cardList.back")}
                     </Component.TableHeaderText>
                 </Component.TableHeaderItem>
             </Component.TableHeader>
@@ -75,7 +77,7 @@ export function CardList(){
                                 {item.question}
                             </Component.TableContentText>
                             <Component.TableDeckTitle>
-                                Deck: {getDeck(item.deckId)}
+                            {translation("cardList.deck")} {getDeck(item.deckId)}
                             </Component.TableDeckTitle>
                         </Component.TableTextContainer>
                         </Component.TableContentItem>
@@ -102,12 +104,12 @@ export function CardList(){
 
                 <Component.MenuItem onPress={()=>{}}>
                         <Component.MenuIcon size={24} name="pen" />
-                        <Component.MenuItemText> {"Editar Card"} </Component.MenuItemText>
+                        <Component.MenuItemText> {translation("cardList.modalCard.edit")} </Component.MenuItemText>
                 </Component.MenuItem>
                 
                 <Component.MenuItem onPress={()=>{removeCards(selectedCard.id)}}>
                         <Component.MenuIcon size={24} name="delete" />
-                        <Component.MenuItemText> {"Remover Card"} </Component.MenuItemText>
+                        <Component.MenuItemText>  {translation("cardList.modalCard.remove")}  </Component.MenuItemText>
                 </Component.MenuItem>
 
             </Component.MenuContainer>

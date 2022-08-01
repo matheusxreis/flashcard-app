@@ -85,6 +85,16 @@
         }
 
     },
+    "cardList": {
+        "front": "Front",
+        "back": "Back",
+        "deck":"Deck",
+        "clickOnCard":"Click on the card for edit it",
+        "modalCard": {
+            "remove":"Remove Card",
+            "edit": "Edit Card"
+        }
+    },
     "preferences": {
         "theme": {
             "title": "Theme",

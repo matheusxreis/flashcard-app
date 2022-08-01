@@ -75,8 +75,8 @@
         "left": "Restante:",
         "author":"Autor:",
         "createdAt": "Creado en:",
-        "cards": "Cartas:",
-        "newCards": "Nuevas cartas:",
+        "cards": "Tarjetas:",
+        "newCards": "Nuevas tarjetas:",
         "front":"Frente",
         "back":"Atras",
         "difficult":{
@@ -84,6 +84,16 @@
             "hard":"Duro"
         }
 
+    },
+    "cardList": {
+        "front": "Frente",
+        "back": "Atras",
+        "deck":"Mazo",
+        "clickOnCard":"Haga clic en la tarjeta para editarla.",
+        "modalCard": {
+            "remove":"Borrar Tarjeta",
+            "edit": "Editar Tarjeta"
+        }
     },
     "preferences": {
         "theme": {
@@ -103,7 +113,7 @@
     },
     "screens": {    
         "home":"Inicio",
-        "cards": "Cartas",
+        "cards": "Tarjetas",
         "settings":"Ajustes",
         "signIn":"Iniciar Sesión",
         "signUp":"Regístrate",

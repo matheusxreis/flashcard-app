@@ -85,6 +85,16 @@
         }
 
     },
+    "cardList": {
+        "front": "Frente",
+        "back": "Costas",
+        "deck":"Deck",
+        "clickOnCard":"Clique no card para alterar",
+        "modalCard": {
+            "remove":"Remover Card",
+            "edit": "Editar Card"
+        }
+    },
     "preferences": {
         "theme": {
             "title": "Tema",
