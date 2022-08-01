@@ -46,6 +46,10 @@ export function cardsReducer(state=initialState, action:AnyAction){
                 };
                 return x;
             })]
+        case cardTypes.removeCard:
+            const { id } = action.payload;
+
+            return state.filter(x=>x.id !== id);
         default:
             return state;
     };

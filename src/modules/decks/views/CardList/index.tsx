@@ -2,9 +2,11 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import { Text } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useTheme } from "styled-components";
 import { Modal } from "../../../../global/components/Modal";
+import { Snackbar } from "../../../../global/components/Snackbar";
+import { removeCard } from "../../../../global/store/cards/actions";
 import { getTitle } from "../../../../global/utils/getTitle";
 import { Card } from "../../entities/Card";
 import { Deck } from "../../entities/Deck";
@@ -18,9 +20,12 @@ export function CardList(){
     const cards:Card[] = useSelector((x:any)=>x.cards);
     const decks:Deck[] = useSelector((x:any)=>x.decks);
     const theme = useTheme();
+    const dispatch = useDispatch();
 
     const [modalCard, setModalCard] = useState<boolean>(false);
     const [selectedCard, setSelectedCard] = useState<Card>({} as Card);
+    const [snackbarVisible, setSnackbarVisible]  = useState<boolean>(false);
+    const [textSnackbar, setTextSnackbar] = useState<string>("");
 
     function getDeck(deckId:string) {
         return decks.find(x=>x.id === deckId).title
@@ -30,6 +35,13 @@ export function CardList(){
         setSelectedCard(card);
         setModalCard(true);
     };
+
+    function removeCards(id:string){
+        dispatch(removeCard(id));
+        setTextSnackbar("Card removido com sucesso.")
+        setSnackbarVisible(true);
+        setModalCard(false);
+    }
 
     return (
 
@@ -80,7 +92,7 @@ export function CardList(){
             }
 
             {/* OPÇÕES MODAL */}
-            
+
             <Modal
             isOpen={modalCard}
             handleClose={()=>setModalCard(false)}>
@@ -93,13 +105,21 @@ export function CardList(){
                         <Component.MenuItemText> {"Editar Card"} </Component.MenuItemText>
                 </Component.MenuItem>
                 
-                <Component.MenuItem onPress={()=>{}}>
+                <Component.MenuItem onPress={()=>{removeCards(selectedCard.id)}}>
                         <Component.MenuIcon size={24} name="delete" />
                         <Component.MenuItemText> {"Remover Card"} </Component.MenuItemText>
                 </Component.MenuItem>
 
             </Component.MenuContainer>
             </Modal>
+
+            <Component.SnackContainer>
+            <Snackbar
+            visible={snackbarVisible}
+            text={textSnackbar}
+            onDismiss={()=>{setSnackbarVisible(false)}}
+            />
+        </Component.SnackContainer>
         </Component.Container>
     )
 

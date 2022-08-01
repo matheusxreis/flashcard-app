@@ -157,3 +157,11 @@ export const MenuTitle = styled.Text`
 `
 
     
+
+export const SnackContainer = styled.View`
+
+    width:100%;
+    align-items:center;
+    margin-top:auto;
+    padding: ${RFValue(20)}px;
+`

@@ -37,3 +37,11 @@ export function cardWasSeen(cardId:string){
         payload: { cardId: cardId }
     }
 }
+
+export function removeCard(id:string){
+
+    return {
+        type: cardTypes.removeCard,
+        payload: { id: id }
+    }
+}
